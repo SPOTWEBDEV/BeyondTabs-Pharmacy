@@ -1,0 +1,43 @@
+/* Smooth scrolling for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar on the testimonial swipe row while keeping it scrollable */
+.snap-x::-webkit-scrollbar {
+  height: 0;
+}
+
+/* Fade-up animation used by script.js via IntersectionObserver */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Keep focus states visible and on-brand for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #E2004F;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

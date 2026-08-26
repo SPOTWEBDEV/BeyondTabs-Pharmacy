@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — BeyondTabs Pharmacy</title>
+<meta name="description" content="Meet the team behind BeyondTabs Pharmacy in Jakande, Lagos — led by Pharm. Mrs. Adaora Nnadi, MD/CEO.">
+<link rel="icon" href="assets/images/logo.png" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            magenta: '#E2004F',
+            magentaDark: '#B8003F',
+            violet: '#9333EA',
+            violetDark: '#6B21A8',
+            pink: '#FF7AC6',
+            ink: '#2B0A3D',
+            blush: '#FDF2F8',
+            lavender: '#F4ECFE',
+          }
+        },
+        fontFamily: {
+          display: ['"Baloo 2"', 'cursive'],
+          body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        },
+        boxShadow: {
+          soft: '0 20px 45px -18px rgba(43,10,61,0.35)',
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-body text-brand-ink bg-white antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-brand-ink/5">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-11 w-11 rounded-full object-cover ring-1 ring-brand-ink/10">
+      <span class="leading-tight">
+        <span class="block font-display font-700 text-lg text-brand-ink tracking-tight">Beyond<span class="text-brand-magenta">Tabs</span></span>
+        <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-violet -mt-1">Pharmacy</span>
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-10 font-medium text-sm text-brand-ink/80">
+      <a href="index.html" class="relative py-1 hover:text-brand-magenta transition-colors">Home</a>
+      <a href="about.html" class="relative py-1 text-brand-magenta after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-brand-magenta">About</a>
+      <a href="contact.html" class="relative py-1 hover:text-brand-magenta transition-colors">Contact</a>
+    </nav>
+
+    <div class="hidden md:flex items-center gap-3">
+      <a href="tel:+2349031218118" class="text-sm font-semibold text-brand-ink/70 hover:text-brand-magenta transition-colors">0903 121 8118</a>
+      <a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy%2C%20I%27d%20like%20to%20ask%20about..." target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:opacity-90 transition-opacity">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.3.37-.44.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2 1.11.98 2.04 1.29 2.33 1.43.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+
+    <button id="nav-toggle" aria-label="Toggle menu" class="md:hidden h-10 w-10 flex flex-col items-center justify-center gap-1.5">
+      <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
+      <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
+      <span class="block h-0.5 w-4 self-end bg-brand-ink transition-all"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-brand-ink/5 bg-white px-5 pb-6 pt-4 space-y-4">
+    <a href="index.html" class="block font-medium text-brand-ink/80">Home</a>
+    <a href="about.html" class="block font-semibold text-brand-magenta">About</a>
+    <a href="contact.html" class="block font-medium text-brand-ink/80">Contact</a>
+    <div class="flex items-center gap-3 pt-2">
+      <a href="tel:+2349031218118" class="text-sm font-semibold text-brand-ink/70">0903 121 8118</a>
+    </div>
+    <a href="https://wa.me/2349031218118" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-3 text-sm font-semibold text-white">
+      Chat on WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="relative isolate overflow-hidden pt-40 pb-24 sm:pt-48 sm:pb-32">
+  <img src="assets/about-hero.jpg" alt="" class="absolute inset-0 h-full w-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-b from-brand-ink/80 via-brand-violetDark/60 to-brand-ink/85"></div>
+  <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
+    <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-pink">About BeyondTabs</span>
+    <h1 class="mt-5 font-display font-800 text-4xl sm:text-6xl text-white leading-tight">Beyond the counter. Beyond tabs.</h1>
+    <p class="mt-5 text-white/80 max-w-xl mx-auto leading-relaxed">A pharmacy built on one idea: healthcare should feel personal, patient, and completely honest — every single time.</p>
+  </div>
+</section>
+
+<!-- ============ OUR STORY ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-28 grid lg:grid-cols-12 gap-12 items-center">
+  <div class="lg:col-span-5">
+    <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Our Story</span>
+    <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">
+      From a single counter to a trusted name.
+    </h2>
+  </div>
+  <div class="lg:col-span-7">
+    <p class="text-lg text-brand-ink/70 leading-relaxed">
+      BeyondTabs Pharmacy started with a straightforward mission: make quality healthcare accessible without the confusion, upsell, or wait. Today, from our location at Prince Ebeano Supermarket, Platinum Way, Jakande, we serve individuals and families across Lagos with genuine medication, wellness products, and pharmacist-led advice — in-store, on WhatsApp, and at your doorstep.
+    </p>
+    <p class="mt-4 text-lg text-brand-ink/70 leading-relaxed">
+      We named ourselves BeyondTabs because we believe a pharmacy's job doesn't end at handing over a pack of tablets. It's in the explanation, the follow-up question, the honest "you probably don't need this" — the parts that go beyond the transaction.
+    </p>
+
+    <div class="mt-10 grid sm:grid-cols-3 gap-6">
+      <div class="rounded-2xl bg-brand-blush p-5">
+        <p class="font-display font-800 text-2xl text-brand-magenta">Integrity</p>
+        <p class="text-sm text-brand-ink/60 mt-1.5">Genuine products, honest advice, always.</p>
+      </div>
+      <div class="rounded-2xl bg-brand-blush p-5">
+        <p class="font-display font-800 text-2xl text-brand-violet">Accessible</p>
+        <p class="text-sm text-brand-ink/60 mt-1.5">In-store, WhatsApp, or delivered to you.</p>
+      </div>
+      <div class="rounded-2xl bg-brand-blush p-5">
+        <p class="font-display font-800 text-2xl text-brand-magenta">Compassion</p>
+        <p class="text-sm text-brand-ink/60 mt-1.5">Every customer treated like family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CEO VIDEO SECTION ============ -->
+<section class="bg-brand-blush py-24 sm:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="relative">
+      <div class="relative rounded-[2rem] overflow-hidden shadow-soft ring-1 ring-brand-ink/5 aspect-[4/5] max-w-md mx-auto lg:mx-0">
+        <video loop playsinline controls poster="assets/ceo-poster.jpg" class="h-full w-full object-cover">
+          <!-- Replace with the real CEO interview video, e.g. assets/ceo-message.mp4 -->
+          <source  src="assets/videos/ceo-message.mp4"  type="video/mp4">
+        </video>
+      </div>
+      <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:-right-6 bg-white rounded-2xl shadow-soft ring-1 ring-brand-ink/5 px-6 py-4 text-center">
+        <p class="font-display font-700 text-brand-ink">Pharm. Mrs. Adaora Nnadi</p>
+        <p class="text-xs text-brand-magenta font-semibold uppercase tracking-wide mt-0.5">MD / CEO, BeyondTabs Pharmacy</p>
+      </div>
+    </div>
+
+    <div class="mt-10 lg:mt-0">
+      <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-violet">A Word From Our CEO</span>
+      <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">Meet Pharm. Mrs. Adaora Nnadi</h2>
+      <p class="mt-5 text-brand-ink/70 leading-relaxed">
+        Pharm. Mrs. Adaora Nnadi founded BeyondTabs Pharmacy on a simple belief: healthcare should feel personal, not transactional. With years of clinical pharmacy experience, she leads a team committed to genuine products, honest advice, and care that goes beyond the counter, beyond tabs, beyond the transaction.
+      </p>
+      <blockquote class="mt-6 border-l-4 border-brand-magenta pl-5 italic text-brand-ink/80 leading-relaxed">
+        "Every customer who walks through our doors is someone's mother, father, or child. We treat every prescription like it's for our own family."
+      </blockquote>
+      <p class="mt-3 text-sm font-semibold text-brand-ink/60">— Pharm. Mrs. Adaora Nnadi, MD/CEO</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY WE'RE DIFFERENT ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-28">
+  <div class="max-w-2xl">
+    <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">What Guides Us</span>
+    <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">The values behind every prescription.</h2>
+  </div>
+
+  <div class="mt-14 grid sm:grid-cols-2 gap-6">
+    <div class="rounded-3xl p-8 bg-gradient-to-br from-brand-magenta to-brand-violetDark text-white shadow-soft">
+      <h3 class="font-display font-700 text-xl">Expertise You Can Question</h3>
+      <p class="mt-3 text-sm text-white/85 leading-relaxed">Our pharmacists don't just fill orders — they explain dosage, interactions, and alternatives, and welcome every question you bring.</p>
+    </div>
+    <div class="rounded-3xl p-8 bg-white ring-1 ring-brand-ink/5 shadow-soft">
+      <h3 class="font-display font-700 text-xl text-brand-ink">Accessibility First</h3>
+      <p class="mt-3 text-sm text-brand-ink/65 leading-relaxed">From our Jakande location, WhatsApp ordering, and city-wide delivery, we meet you wherever is easiest for you.</p>
+    </div>
+    <div class="rounded-3xl p-8 bg-white ring-1 ring-brand-ink/5 shadow-soft">
+      <h3 class="font-display font-700 text-xl text-brand-ink">Zero Tolerance for Counterfeits</h3>
+      <p class="mt-3 text-sm text-brand-ink/65 leading-relaxed">Every item on our shelves is sourced from verified manufacturers and licensed distributors, checked before it ever reaches you.</p>
+    </div>
+    <div class="rounded-3xl p-8 bg-gradient-to-br from-brand-violet to-brand-ink text-white shadow-soft">
+      <h3 class="font-display font-700 text-xl">Compassion in Every Conversation</h3>
+      <p class="mt-3 text-sm text-white/85 leading-relaxed">Health can be stressful. We take the time to listen first, so the advice we give actually fits your life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="py-24 sm:py-28 px-5 sm:px-8">
+  <div class="max-w-5xl mx-auto rounded-[2.5rem] bg-gradient-to-br from-brand-ink via-brand-violetDark to-brand-magenta px-8 py-16 sm:px-16 sm:py-20 text-center relative overflow-hidden">
+    <div class="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-brand-pink/20 blur-3xl"></div>
+    <div class="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-brand-violet/30 blur-3xl"></div>
+    <div class="relative">
+      <h2 class="font-display font-700 text-3xl sm:text-4xl text-white leading-tight">Come say hello at Jakande.</h2>
+      <p class="mt-4 text-white/75 max-w-md mx-auto">Or skip the trip — send us a message on WhatsApp and we'll take it from there.</p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="contact.html" class="rounded-full bg-white px-7 py-3.5 text-sm font-bold text-brand-ink hover:bg-brand-blush transition-colors">Get Directions</a>
+        <a href="https://wa.me/2349031218118" target="_blank" rel="noopener" class="rounded-full border border-white/40 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-brand-ink text-white/70">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-10 w-10 rounded-full object-cover">
+        <span class="font-display font-700 text-white text-lg">BeyondTabs</span>
+      </a>
+      <p class="mt-4 text-sm leading-relaxed max-w-xs">Feel better, feel alive. Genuine medication and honest pharmacist care in Jakande, Lagos.</p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="#" aria-label="Instagram" class="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-magenta transition-colors">
+          <svg class="h-4 w-4 fill-white" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.62.07 4.81 0 3.2 0 3.56-.07 4.81-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.61.07-4.85.07-3.2 0-3.6 0-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.61-.07-4.81 0-3.19 0-3.56.07-4.81.15-3.23 1.66-4.77 4.92-4.92C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" class="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-magenta transition-colors">
+          <svg class="h-4 w-4 fill-white" viewBox="0 0 24 24"><path d="M16.6 5.82c-.75-.82-1.16-1.9-1.16-3.02h-3.1v13.1a2.75 2.75 0 11-2.24-2.7v-3.14a5.85 5.85 0 105.44 5.83c0-.28-.02-.56-.07-.83a6.28 6.28 0 003.5 1.06v-3.1c-.9 0-1.72-.28-2.4-.76z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Explore</h4>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="index.html" class="hover:text-brand-pink transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a></li>
+        <li><a href="contact.html" class="hover:text-brand-pink transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Contact</h4>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="tel:+2349031218118" class="hover:text-brand-pink transition-colors">0903 121 8118</a></li>
+        <li><a href="https://wa.me/2349031218118" target="_blank" rel="noopener" class="hover:text-brand-pink transition-colors">WhatsApp Us</a></li>
+        <li>Prince Ebeano Supermarket,<br>Platinum Way, Jakande, Lagos</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Hours</h4>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li class="flex justify-between gap-4"><span>Mon – Sat</span><span>8:00am – 10:00pm</span></li>
+        <li class="flex justify-between gap-4"><span>Sunday</span><span>10:00am – 8:00pm</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-6 px-5 sm:px-8 text-xs text-white/50 flex flex-col sm:flex-row gap-2 justify-between max-w-7xl mx-auto">
+    <p>© <span id="year"></span> BeyondTabs Pharmacy. All rights reserved.</p>
+    <p>Designed with care for feeling better, feeling alive.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy" target="_blank" rel="noopener"
+   class="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] shadow-soft flex items-center justify-center hover:scale-105 transition-transform"
+   aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-7 w-7 fill-white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.3.37-.44.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2 1.11.98 2.04 1.29 2.33 1.43.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
+</a>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
