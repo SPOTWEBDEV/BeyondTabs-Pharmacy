@@ -1,644 +1,1027 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BeyondTabs Pharmacy — Feel Better, Feel Alive</title>
-<meta name="description" content="BeyondTabs Pharmacy: licensed pharmacists, genuine medication and wellness products in Jakande, Lagos. Order on WhatsApp, get free counseling and home delivery.">
-<link rel="icon" href="assets/images/logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            magenta: '#E2004F',
-            magentaDark: '#B8003F',
-            violet: '#9333EA',
-            violetDark: '#6B21A8',
-            pink: '#FF7AC6',
-            ink: '#2B0A3D',
-            blush: '#FDF2F8',
-            lavender: '#F4ECFE',
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeyondTabs Pharmacy — Feel Better, Feel Alive</title>
+  <meta name="description"
+    content="BeyondTabs Pharmacy: licensed pharmacists, genuine medication and wellness products in Jakande, Lagos. Order on WhatsApp, get free counseling and home delivery.">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://beyondtabs-pharmacy.vercel.app//">
+  <meta property="og:title" content="BeyondTabs Pharmacy — Feel Better, Feel Alive">
+  <meta property="og:description"
+    content="BeyondTabs Pharmacy: licensed pharmacists, genuine medication and wellness products in Jakande, Lagos. Order on WhatsApp, get free counseling and home delivery.">
+  <!-- MUST be an absolute URL starting with https:// -->
+  <meta property="og:image" content="https://beyondtabs-pharmacy.vercel.app//assets/images/logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://beyondtabs-pharmacy.vercel.app//">
+  <meta name="twitter:title" content="BeyondTabs Pharmacy — Feel Better, Feel Alive">
+  <meta name="twitter:description"
+    content="BeyondTabs Pharmacy: licensed pharmacists, genuine medication and wellness products in Jakande, Lagos. Order on WhatsApp, get free counseling and home delivery.">
+  <meta name="twitter:image" content="https://beyondtabs-pharmacy.vercel.app//assets/images/logo.png">
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              magenta: '#E2004F',
+              magentaDark: '#B8003F',
+              violet: '#9333EA',
+              violetDark: '#6B21A8',
+              pink: '#FF7AC6',
+              ink: '#2B0A3D',
+              blush: '#FDF2F8',
+              lavender: '#F4ECFE',
+            }
+          },
+          fontFamily: {
+            display: ['"Baloo 2"', 'cursive'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 20px 45px -18px rgba(43,10,61,0.35)',
           }
-        },
-        fontFamily: {
-          display: ['"Baloo 2"', 'cursive'],
-          body: ['"Plus Jakarta Sans"', 'sans-serif'],
-        },
-        boxShadow: {
-          soft: '0 20px 45px -18px rgba(43,10,61,0.35)',
         }
       }
     }
-  }
-</script>
-<link rel="stylesheet" href="assets/css/style.css">
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="font-body text-brand-ink bg-white antialiased">
 
-<!-- ============ NAV ============ -->
-<header class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-brand-ink/5">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3 shrink-0">
-      <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-11 w-11 rounded-full object-cover ring-1 ring-brand-ink/10">
-      <span class="leading-tight">
-        <span class="block font-display font-700 text-lg text-brand-ink tracking-tight">Beyond<span class="text-brand-magenta">Tabs</span></span>
-        <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-violet -mt-1">Pharmacy</span>
+  <!-- ============ NAV ============ -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-brand-ink/5">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo"
+          class="h-11 w-11 rounded-full object-cover ring-1 ring-brand-ink/10">
+        <span class="leading-tight">
+          <span class="block font-display font-700 text-lg text-brand-ink tracking-tight">Beyond<span
+              class="text-brand-magenta">Tabs</span></span>
+          <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-violet -mt-1">Pharmacy</span>
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-10 font-medium text-sm text-brand-ink/80">
+        <a href="index.html"
+          class="relative py-1 text-brand-magenta after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-brand-magenta">Home</a>
+        <a href="about.html" class="relative py-1 hover:text-brand-magenta transition-colors">About</a>
+        <a href="contact.html" class="relative py-1 hover:text-brand-magenta transition-colors">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a href="tel:+2349031218118"
+          class="text-sm font-semibold text-brand-ink/70 hover:text-brand-magenta transition-colors">0903 121 8118</a>
+        <a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy%2C%20I%27d%20like%20to%20ask%20about..."
+          target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:opacity-90 transition-opacity">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-white">
+            <path
+              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.3.37-.44.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2 1.11.98 2.04 1.29 2.33 1.43.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z" />
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+
+      <button id="nav-toggle" aria-label="Toggle menu"
+        class="md:hidden h-10 w-10 flex flex-col items-center justify-center gap-1.5">
+        <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
+        <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
+        <span class="block h-0.5 w-4 self-end bg-brand-ink transition-all"></span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-brand-ink/5 bg-white px-5 pb-6 pt-4 space-y-4">
+      <a href="index.html" class="block font-semibold text-brand-magenta">Home</a>
+      <a href="about.html" class="block font-medium text-brand-ink/80">About</a>
+      <a href="contact.html" class="block font-medium text-brand-ink/80">Contact</a>
+      <div class="flex items-center gap-3 pt-2">
+        <a href="tel:+2349031218118" class="text-sm font-semibold text-brand-ink/70">0903 121 8118</a>
+      </div>
+      <a href="https://wa.me/2349031218118" target="_blank" rel="noopener"
+        class="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-3 text-sm font-semibold text-white">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- ============ HERO (video header) ============ -->
+  <section class="relative isolate overflow-hidden h-[92vh] min-h-[600px] flex items-end">
+    <video autoplay muted loop playsinline poster="assets/images/hero-poster.jpg"
+      class="absolute inset-0 h-full w-full object-cover">
+      <!-- Replace the line below with your real brand video file -->
+      <source src="https://gxknv67zpgc375e9.public.blob.vercel-storage.com/hero.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/90 via-brand-violetDark/55 to-brand-magenta/30"></div>
+    <div class="absolute inset-0 bg-brand-ink/10"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pb-16 sm:pb-20 w-full">
+      <span
+        class="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 ring-1 ring-white/25">
+        Prince Ebeano Supermarket · Platinum Way, Jakande
       </span>
-    </a>
-
-    <nav class="hidden md:flex items-center gap-10 font-medium text-sm text-brand-ink/80">
-      <a href="index.html" class="relative py-1 text-brand-magenta after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-brand-magenta">Home</a>
-      <a href="about.html" class="relative py-1 hover:text-brand-magenta transition-colors">About</a>
-      <a href="contact.html" class="relative py-1 hover:text-brand-magenta transition-colors">Contact</a>
-    </nav>
-
-    <div class="hidden md:flex items-center gap-3">
-      <a href="tel:+2349031218118" class="text-sm font-semibold text-brand-ink/70 hover:text-brand-magenta transition-colors">0903 121 8118</a>
-      <a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy%2C%20I%27d%20like%20to%20ask%20about..." target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:opacity-90 transition-opacity">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.3.37-.44.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2 1.11.98 2.04 1.29 2.33 1.43.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
-        WhatsApp
-      </a>
-    </div>
-
-    <button id="nav-toggle" aria-label="Toggle menu" class="md:hidden h-10 w-10 flex flex-col items-center justify-center gap-1.5">
-      <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
-      <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
-      <span class="block h-0.5 w-4 self-end bg-brand-ink transition-all"></span>
-    </button>
-  </div>
-
-  <div id="mobile-menu" class="hidden md:hidden border-t border-brand-ink/5 bg-white px-5 pb-6 pt-4 space-y-4">
-    <a href="index.html" class="block font-semibold text-brand-magenta">Home</a>
-    <a href="about.html" class="block font-medium text-brand-ink/80">About</a>
-    <a href="contact.html" class="block font-medium text-brand-ink/80">Contact</a>
-    <div class="flex items-center gap-3 pt-2">
-      <a href="tel:+2349031218118" class="text-sm font-semibold text-brand-ink/70">0903 121 8118</a>
-    </div>
-    <a href="https://wa.me/2349031218118" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-3 text-sm font-semibold text-white">
-      Chat on WhatsApp
-    </a>
-  </div>
-</header>
-
-<!-- ============ HERO (video header) ============ -->
-<section class="relative isolate overflow-hidden h-[92vh] min-h-[600px] flex items-end">
-  <video autoplay muted loop playsinline poster="assets/images/hero-poster.jpg" class="absolute inset-0 h-full w-full object-cover">
-    <!-- Replace the line below with your real brand video file -->
-    <source src="https://gxknv67zpgc375e9.public.blob.vercel-storage.com/hero.mp4" type="video/mp4">
-  </video>
-  <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/90 via-brand-violetDark/55 to-brand-magenta/30"></div>
-  <div class="absolute inset-0 bg-brand-ink/10"></div>
-
-  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pb-16 sm:pb-20 w-full">
-    <span class="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 ring-1 ring-white/25">
-      Prince Ebeano Supermarket · Platinum Way, Jakande
-    </span>
-    <h1 class="mt-6 font-display font-800 text-white text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-7xl max-w-3xl">
-      Feel better.<br><span class="bg-gradient-to-r from-brand-pink to-white bg-clip-text text-transparent">Feel alive.</span>
-    </h1>
-    <p class="mt-5 max-w-xl text-white/85 text-base sm:text-lg leading-relaxed">
-      Genuine medication, honest pharmacist advice, and wellness products you can trust — in-store, on WhatsApp, or delivered to your door.
-    </p>
-    <div class="mt-8 flex flex-wrap items-center gap-4">
-      <a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-brand-ink shadow-soft hover:bg-brand-blush transition-colors">
-        Order on WhatsApp
-      </a>
-      <a href="about.html" class="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors">
-        Meet Our Pharmacists
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TRUST STRIP ============ -->
-<section class="relative z-10 -mt-10 sm:-mt-12 px-5 sm:px-8">
-  <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-soft ring-1 ring-brand-ink/5 grid grid-cols-2 sm:grid-cols-4 divide-x divide-brand-ink/5">
-    <a href="tel:+2349031218118" class="p-5 sm:p-7 flex flex-col items-center text-center gap-1.5 hover:bg-brand-blush/60 transition-colors rounded-l-3xl">
-      <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.115-1.45l-4.11-1.11a1.5 1.5 0 00-1.55.43l-.913.913a12.03 12.03 0 01-6.68-6.68l.912-.913a1.5 1.5 0 00.43-1.55l-1.11-4.11A1.5 1.5 0 007.622 3H6.25A2.25 2.25 0 004 5.25v1.5z"/></svg>
-      <span class="text-xs font-semibold text-brand-ink/60">Call us</span>
-      <span class="text-sm font-bold text-brand-ink">0903 121 8118</span>
-    </a>
-    <a href="https://wa.me/2349031218118" target="_blank" rel="noopener" class="p-5 sm:p-7 flex flex-col items-center text-center gap-1.5 hover:bg-brand-blush/60 transition-colors">
-      <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3.75h6m4.5-6.75H2.25v13.5L6 15.75h12a2.25 2.25 0 002.25-2.25v-6a2.25 2.25 0 00-2.25-2.25z"/></svg>
-      <span class="text-xs font-semibold text-brand-ink/60">WhatsApp</span>
-      <span class="text-sm font-bold text-brand-ink">0903 121 8118</span>
-    </a>
-    <div class="p-5 sm:p-7 flex flex-col items-center text-center gap-1.5">
-      <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-      <span class="text-xs font-semibold text-brand-ink/60">Visit us</span>
-      <span class="text-sm font-bold text-brand-ink">Prince Ebeano, Jakande</span>
-    </div>
-    <div class="p-5 sm:p-7 flex flex-col items-center text-center gap-1.5 rounded-r-3xl">
-      <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <span class="text-xs font-semibold text-brand-ink/60">Open</span>
-      <span class="text-sm font-bold text-brand-ink">Mon – Sun, 8am–10pm</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OUR MISSION ============ -->
-<section class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32 grid lg:grid-cols-12 gap-12 items-center">
-  <div class="lg:col-span-5">
-    <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Our Mission</span>
-    <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">
-      Healthcare that feels personal, not transactional.
-    </h2>
-  </div>
-  <div class="lg:col-span-7">
-    <p class="text-lg text-brand-ink/70 leading-relaxed">
-      At BeyondTabs Pharmacy, we exist to make quality healthcare simple, honest, and within reach. From genuine medication to guided wellness advice, every prescription we fill and every product we recommend is chosen with one goal in mind: helping you feel better and live fully.
-    </p>
-    <p class="mt-4 text-lg text-brand-ink/70 leading-relaxed">
-      We go beyond the counter — beyond tabs — to make sure you actually understand what you're taking, why, and what to expect. No rushed transactions, no guesswork.
-    </p>
-    <div class="mt-8 grid grid-cols-3 gap-6">
-      <div>
-        <p class="font-display font-800 text-3xl text-brand-magenta">100%</p>
-        <p class="text-sm text-brand-ink/60 mt-1">Genuine, verified products</p>
-      </div>
-      <div>
-        <p class="font-display font-800 text-3xl text-brand-violet">7 Days</p>
-        <p class="text-sm text-brand-ink/60 mt-1">A week, open for you</p>
-      </div>
-      <div>
-        <p class="font-display font-800 text-3xl text-brand-magenta">WhatsApp</p>
-        <p class="text-sm text-brand-ink/60 mt-1">Order in minutes</p>
+      <h1 class="mt-6 font-display font-800 text-white text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-7xl max-w-3xl">
+        Feel better.<br><span class="bg-gradient-to-r from-brand-pink to-white bg-clip-text text-transparent">Feel
+          alive.</span>
+      </h1>
+      <p class="mt-5 max-w-xl text-white/85 text-base sm:text-lg leading-relaxed">
+        Genuine medication, honest pharmacist advice, and wellness products you can trust — in-store, on WhatsApp, or
+        delivered to your door.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy%2C%20I%27d%20like%20to%20place%20an%20order."
+          target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-brand-ink shadow-soft hover:bg-brand-blush transition-colors">
+          Order on WhatsApp
+        </a>
+        <a href="about.html"
+          class="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+          Meet Our Pharmacists
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ WHY CHOOSE US ============ -->
-<section class="bg-brand-blush py-24 sm:py-28">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="max-w-2xl">
-      <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-violet">Why Choose Us</span>
+  <!-- ============ TRUST STRIP ============ -->
+  <section class="relative z-10 -mt-10 sm:-mt-12 px-5 sm:px-8">
+    <div
+      class="max-w-6xl mx-auto bg-white rounded-3xl shadow-soft ring-1 ring-brand-ink/5 grid grid-cols-2 sm:grid-cols-4 divide-x divide-brand-ink/5">
+      <a href="tel:+2349031218118"
+        class="p-5 sm:p-7 flex flex-col items-center text-center gap-1.5 hover:bg-brand-blush/60 transition-colors rounded-l-3xl">
+        <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.115-1.45l-4.11-1.11a1.5 1.5 0 00-1.55.43l-.913.913a12.03 12.03 0 01-6.68-6.68l.912-.913a1.5 1.5 0 00.43-1.55l-1.11-4.11A1.5 1.5 0 007.622 3H6.25A2.25 2.25 0 004 5.25v1.5z" />
+        </svg>
+        <span class="text-xs font-semibold text-brand-ink/60">Call us</span>
+        <span class="text-sm font-bold text-brand-ink">0903 121 8118</span>
+      </a>
+      <a href="https://wa.me/2349031218118" target="_blank" rel="noopener"
+        class="p-5 sm:p-7 flex flex-col items-center text-center gap-1.5 hover:bg-brand-blush/60 transition-colors">
+        <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M7.5 8.25h9m-9 3.75h6m4.5-6.75H2.25v13.5L6 15.75h12a2.25 2.25 0 002.25-2.25v-6a2.25 2.25 0 00-2.25-2.25z" />
+        </svg>
+        <span class="text-xs font-semibold text-brand-ink/60">WhatsApp</span>
+        <span class="text-sm font-bold text-brand-ink">0903 121 8118</span>
+      </a>
+      <div class="p-5 sm:p-7 flex flex-col items-center text-center gap-1.5">
+        <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+        </svg>
+        <span class="text-xs font-semibold text-brand-ink/60">Visit us</span>
+        <span class="text-sm font-bold text-brand-ink">Prince Ebeano, Jakande</span>
+      </div>
+      <div class="p-5 sm:p-7 flex flex-col items-center text-center gap-1.5 rounded-r-3xl">
+        <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="text-xs font-semibold text-brand-ink/60">Open</span>
+        <span class="text-sm font-bold text-brand-ink">Mon – Sun, 8am–10pm</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OUR MISSION ============ -->
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-5">
+      <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Our Mission</span>
       <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">
-        Six reasons families in Jakande trust BeyondTabs.
+        Healthcare that feels personal, not transactional.
       </h2>
     </div>
-
-    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
-        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center">
-          <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3 7.5-7.5M12 3c-2.4 0-4.4 1.4-5.4 3.4C4.4 6.6 3 8.6 3 11c0 2 1 3.7 2.5 4.7-.2.5-.3 1-.3 1.6 0 2.5 2 4.5 4.5 4.5.9 0 1.7-.3 2.4-.7.7.4 1.5.7 2.4.7 2.5 0 4.5-2 4.5-4.5 0-.6-.1-1.1-.3-1.6C20 14.7 21 13 21 11c0-2.4-1.4-4.4-3.6-5.6C16.4 3.4 14.4 2 12 2z"/></svg>
+    <div class="lg:col-span-7">
+      <p class="text-lg text-brand-ink/70 leading-relaxed">
+        At BeyondTabs Pharmacy, we exist to make quality healthcare simple, honest, and within reach. From genuine
+        medication to guided wellness advice, every prescription we fill and every product we recommend is chosen with
+        one goal in mind: helping you feel better and live fully.
+      </p>
+      <p class="mt-4 text-lg text-brand-ink/70 leading-relaxed">
+        We go beyond the counter — beyond tabs — to make sure you actually understand what you're taking, why, and what
+        to expect. No rushed transactions, no guesswork.
+      </p>
+      <div class="mt-8 grid grid-cols-3 gap-6">
+        <div>
+          <p class="font-display font-800 text-3xl text-brand-magenta">100%</p>
+          <p class="text-sm text-brand-ink/60 mt-1">Genuine, verified products</p>
         </div>
-        <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Licensed Pharmacists</h3>
-        <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Every product and prescription is reviewed by qualified pharmacists you can actually talk to.</p>
-      </div>
-      <div class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
-        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-violet to-brand-violetDark flex items-center justify-center">
-          <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3 3-3m-6-6.75l3-3 3 3M12 3v18"/></svg>
+        <div>
+          <p class="font-display font-800 text-3xl text-brand-violet">7 Days</p>
+          <p class="text-sm text-brand-ink/60 mt-1">A week, open for you</p>
         </div>
-        <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">100% Genuine Products</h3>
-        <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Sourced directly from verified manufacturers and distributors — no counterfeits, no shortcuts.</p>
-      </div>
-      <div class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
-        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center">
-          <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3.75h6m4.5-6.75H2.25v13.5L6 15.75h12a2.25 2.25 0 002.25-2.25v-6a2.25 2.25 0 00-2.25-2.25z"/></svg>
+        <div>
+          <p class="font-display font-800 text-3xl text-brand-magenta">WhatsApp</p>
+          <p class="text-sm text-brand-ink/60 mt-1">Order in minutes</p>
         </div>
-        <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Order on WhatsApp</h3>
-        <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Send your prescription or request and we'll have it ready for pickup or delivery.</p>
-      </div>
-      <div class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
-        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-violet to-brand-violetDark flex items-center justify-center">
-          <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.25h5.106a1.125 1.125 0 011.09.84l1.541 6.09a1.125 1.125 0 01-1.09 1.41H21m-7.5-8.34V18.75m0-11.25H3.375c-.621 0-1.125.504-1.125 1.125v9c0 .621.504 1.125 1.125 1.125h1.5"/></svg>
-        </div>
-        <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Home Delivery</h3>
-        <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Across Lagos, we bring your medication and wellness essentials straight to your door.</p>
-      </div>
-      <div class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
-        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center">
-          <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
-        </div>
-        <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Free Health Counseling</h3>
-        <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Not sure what you need? Get honest, unhurried advice from our pharmacists, at no extra cost.</p>
-      </div>
-      <div class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
-        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-violet to-brand-violetDark flex items-center justify-center">
-          <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Extended Hours</h3>
-        <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">We open early and close late — health emergencies don't wait for business hours.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ CELLGEVITY EDUCATION (video) ============ -->
-<section class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-  <div class="relative order-2 lg:order-1">
-    <div class="relative rounded-[2rem] overflow-hidden shadow-soft ring-1 ring-brand-ink/5 aspect-[4/3]">
-      <video loop playsinline controls poster="assets/images/cellgevity-poster.PNG" class="h-full w-full object-cover">
-        <!-- Replace with the real CellGevity education video -->
-        <source src="https://gxknv67zpgc375e9.public.blob.vercel-storage.com/cellgevity.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="absolute -bottom-6 -right-4 sm:-right-8 bg-white rounded-2xl shadow-soft ring-1 ring-brand-ink/5 px-5 py-4 max-w-[220px]">
-      <p class="text-xs font-semibold text-brand-magenta uppercase tracking-wide">Ask before you buy</p>
-      <p class="text-sm text-brand-ink/70 mt-1">Our pharmacists explain if a supplement is right for you.</p>
-    </div>
-  </div>
-
-  <div class="order-1 lg:order-2">
-    <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Wellness Notes</span>
-    <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">
-      What is CellGevity, and why do people ask about it?
-    </h2>
-    <p class="mt-5 text-brand-ink/70 leading-relaxed">
-      CellGevity is a glutathione-support supplement built around RiboCeine technology, a compound formulated to help the body produce its own glutathione, one of its most important natural antioxidants. Customers often ask us about it for general wellness support, from immune health to cellular repair.
-    </p>
-    <p class="mt-4 text-brand-ink/70 leading-relaxed">
-      As with any supplement, CellGevity isn't a substitute for medical treatment, and what works for one body may not suit another. Watch the short video for an overview, then let's talk before you buy a single capsule.
-    </p>
-    <a href="https://wa.me/2349031218118?text=Hi%2C%20I%27d%20like%20to%20ask%20a%20pharmacist%20about%20CellGevity." target="_blank" rel="noopener"
-       class="mt-7 inline-flex items-center gap-2 rounded-full bg-brand-ink px-6 py-3 text-sm font-bold text-white hover:bg-brand-violetDark transition-colors">
-      Ask a pharmacist about CellGevity
-      <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- ============ HEALTH READS ============ -->
-<section class="bg-brand-lavender py-24 sm:py-28">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="flex flex-wrap items-end justify-between gap-6">
-      <div class="max-w-xl">
-        <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-violet">Health &amp; Wellness Reads</span>
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section class="bg-brand-blush py-24 sm:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl">
+        <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-violet">Why Choose Us</span>
         <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">
-          Things worth knowing before your next purchase.
+          Six reasons families in Jakande trust BeyondTabs.
         </h2>
       </div>
-      <a href="https://wa.me/2349031218118?text=Hi%2C%20I%27d%20love%20to%20read%20more%20health%20tips%20from%20BeyondTabs." target="_blank" rel="noopener"
-         class="text-sm font-bold text-brand-magenta hover:text-brand-violetDark transition-colors">Ask us for more tips →</a>
+
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
+          <div
+            class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center">
+            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12.75l3 3 7.5-7.5M12 3c-2.4 0-4.4 1.4-5.4 3.4C4.4 6.6 3 8.6 3 11c0 2 1 3.7 2.5 4.7-.2.5-.3 1-.3 1.6 0 2.5 2 4.5 4.5 4.5.9 0 1.7-.3 2.4-.7.7.4 1.5.7 2.4.7 2.5 0 4.5-2 4.5-4.5 0-.6-.1-1.1-.3-1.6C20 14.7 21 13 21 11c0-2.4-1.4-4.4-3.6-5.6C16.4 3.4 14.4 2 12 2z" />
+            </svg>
+          </div>
+          <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Licensed Pharmacists</h3>
+          <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Every product and prescription is reviewed by
+            qualified pharmacists you can actually talk to.</p>
+        </div>
+        <div
+          class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
+          <div
+            class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-violet to-brand-violetDark flex items-center justify-center">
+            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3 3-3m-6-6.75l3-3 3 3M12 3v18" />
+            </svg>
+          </div>
+          <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">100% Genuine Products</h3>
+          <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Sourced directly from verified manufacturers and
+            distributors — no counterfeits, no shortcuts.</p>
+        </div>
+        <div
+          class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
+          <div
+            class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center">
+            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M7.5 8.25h9m-9 3.75h6m4.5-6.75H2.25v13.5L6 15.75h12a2.25 2.25 0 002.25-2.25v-6a2.25 2.25 0 00-2.25-2.25z" />
+            </svg>
+          </div>
+          <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Order on WhatsApp</h3>
+          <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Send your prescription or request and we'll have it
+            ready for pickup or delivery.</p>
+        </div>
+        <div
+          class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
+          <div
+            class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-violet to-brand-violetDark flex items-center justify-center">
+            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.25h5.106a1.125 1.125 0 011.09.84l1.541 6.09a1.125 1.125 0 01-1.09 1.41H21m-7.5-8.34V18.75m0-11.25H3.375c-.621 0-1.125.504-1.125 1.125v9c0 .621.504 1.125 1.125 1.125h1.5" />
+            </svg>
+          </div>
+          <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Home Delivery</h3>
+          <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Across Lagos, we bring your medication and wellness
+            essentials straight to your door.</p>
+        </div>
+        <div
+          class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
+          <div
+            class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center">
+            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+            </svg>
+          </div>
+          <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Free Health Counseling</h3>
+          <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Not sure what you need? Get honest, unhurried advice
+            from our pharmacists, at no extra cost.</p>
+        </div>
+        <div
+          class="group bg-white rounded-3xl p-7 shadow-soft ring-1 ring-brand-ink/5 hover:-translate-y-1 transition-transform">
+          <div
+            class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-violet to-brand-violetDark flex items-center justify-center">
+            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="mt-5 font-display font-700 text-lg text-brand-ink">Extended Hours</h3>
+          <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">We open early and close late — health emergencies
+            don't wait for business hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CELLGEVITY EDUCATION (video) ============ -->
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="relative order-2 lg:order-1">
+      <div class="relative rounded-[2rem] overflow-hidden shadow-soft ring-1 ring-brand-ink/5 aspect-[4/3]">
+        <video playsinline controls poster="assets/images/cellgevity-poster.PNG" class="h-full w-full object-cover">
+          <!-- Replace with the real CellGevity education video -->
+          <source src="https://gxknv67zpgc375e9.public.blob.vercel-storage.com/cellgevity.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div
+        class="absolute -bottom-6 -right-4 sm:-right-8 bg-white rounded-2xl shadow-soft ring-1 ring-brand-ink/5 px-5 py-4 max-w-[220px]">
+        <p class="text-xs font-semibold text-brand-magenta uppercase tracking-wide">Ask before you buy</p>
+        <p class="text-sm text-brand-ink/70 mt-1">Our pharmacists explain if a supplement is right for you.</p>
+      </div>
     </div>
 
-    <div class="mt-14 grid md:grid-cols-3 gap-7">
-      <article class="bg-white rounded-3xl overflow-hidden shadow-soft ring-1 ring-brand-ink/5 group">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="assets/images/tip-skincare.jpeg" alt="Skincare trends you should avoid" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
-        </div>
-        <div class="p-6">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-brand-magenta">Skincare</p>
-          <h3 class="mt-2 font-display font-700 text-lg text-brand-ink leading-snug">Skincare Trends You Should Avoid</h3>
-          <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Not every viral routine belongs on your skin. Here's what our pharmacists want you to know before you try the next trending hack.</p>
-        </div>
-      </article>
-
-      <article class="bg-white rounded-3xl overflow-hidden shadow-soft ring-1 ring-brand-ink/5 group">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="assets/images/tip-actives.jpeg" alt="Using too many active ingredients together" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
-        </div>
-        <div class="p-6">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-brand-magenta">Skincare</p>
-          <h3 class="mt-2 font-display font-700 text-lg text-brand-ink leading-snug">Using Too Many Active Ingredients Together</h3>
-          <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Layering retinol, vitamin C, and acids at once can damage your skin barrier. Here's how to build a routine your skin will thank you for.</p>
-        </div>
-      </article>
-
-      <article class="bg-white rounded-3xl overflow-hidden shadow-soft ring-1 ring-brand-ink/5 group">
-        <div class="aspect-[4/3] overflow-hidden bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center">
-          <svg class="h-16 w-16 text-white/85" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <div class="p-6">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-brand-magenta">Prescriptions</p>
-          <h3 class="mt-2 font-display font-700 text-lg text-brand-ink leading-snug">Reading Your Prescription Label Correctly</h3>
-          <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Dosage, frequency, warnings — it's all on the label. A two-minute guide to understanding exactly what your pharmacist wants you to know.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS — two-row continuous marquee ============ -->
-<section class="py-24 sm:py-28 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="max-w-2xl">
-      <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Testimonials</span>
+    <div class="order-1 lg:order-2">
+      <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Wellness Notes</span>
       <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">
-        What our customers say.
+        What is CellGevity, and why do people ask about it?
       </h2>
-    </div>
-  </div>
-
-  <!-- Row 1 — scrolls left -->
-  <div class="marquee-row mt-14">
-    <div class="marquee-track">
-      <!-- set A -->
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5">
-        <div class="flex gap-1 text-brand-magenta">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"I sent my mum's prescription on WhatsApp and it was ready before we even got there. That kind of service keeps us coming back."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Chiamaka O.</figcaption>
-      </figure>
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5">
-        <div class="flex gap-1 text-brand-magenta">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"First pharmacy where the pharmacist actually sat me down and explained my medication instead of just handing it over."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Tunde A.</figcaption>
-      </figure>
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5">
-        <div class="flex gap-1 text-brand-magenta">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"Delivery came same day, properly packaged, and exactly what I ordered. No counterfeits, no wahala."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Ifeoma B.</figcaption>
-      </figure>
-      <!-- set A repeated for seamless loop -->
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5" aria-hidden="true">
-        <div class="flex gap-1 text-brand-magenta">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"I sent my mum's prescription on WhatsApp and it was ready before we even got there. That kind of service keeps us coming back."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Chiamaka O.</figcaption>
-      </figure>
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5" aria-hidden="true">
-        <div class="flex gap-1 text-brand-magenta">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"First pharmacy where the pharmacist actually sat me down and explained my medication instead of just handing it over."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Tunde A.</figcaption>
-      </figure>
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5" aria-hidden="true">
-        <div class="flex gap-1 text-brand-magenta">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"Delivery came same day, properly packaged, and exactly what I ordered. No counterfeits, no wahala."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Ifeoma B.</figcaption>
-      </figure>
-    </div>
-  </div>
-
-  <!-- Row 2 — scrolls right -->
-  <div class="marquee-row mt-6">
-    <div class="marquee-track reverse">
-      <!-- set B -->
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5">
-        <div class="flex gap-1 text-brand-violet">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"I always thought glutathione supplements were a gamble until they broke it down for me in plain English. No pressure to buy, just information."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Emeka N.</figcaption>
-      </figure>
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5">
-        <div class="flex gap-1 text-brand-violet">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"The WhatsApp ordering is so smooth. I typed out what I needed, got a price in minutes, and picked it up on my way from work."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Blessing K.</figcaption>
-      </figure>
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5">
-        <div class="flex gap-1 text-brand-violet">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"As someone with an elderly parent on multiple medications, having pharmacists who actually check for interactions gives me real peace of mind."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Ngozi P.</figcaption>
-      </figure>
-      <!-- set B repeated for seamless loop -->
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5" aria-hidden="true">
-        <div class="flex gap-1 text-brand-violet">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"I always thought glutathione supplements were a gamble until they broke it down for me in plain English. No pressure to buy, just information."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Emeka N.</figcaption>
-      </figure>
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5" aria-hidden="true">
-        <div class="flex gap-1 text-brand-violet">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"The WhatsApp ordering is so smooth. I typed out what I needed, got a price in minutes, and picked it up on my way from work."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Blessing K.</figcaption>
-      </figure>
-      <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5" aria-hidden="true">
-        <div class="flex gap-1 text-brand-violet">
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"As someone with an elderly parent on multiple medications, having pharmacists who actually check for interactions gives me real peace of mind."</blockquote>
-        <figcaption class="mt-6 font-display font-700 text-brand-ink">Ngozi P.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="bg-brand-blush py-24 sm:py-28">
-  <div class="max-w-4xl mx-auto px-5 sm:px-8">
-    <div class="text-center">
-      <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-violet">FAQ</span>
-      <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">Questions people ask us often.</h2>
-    </div>
-
-    <div class="mt-12 space-y-4">
-      <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft open:shadow-soft" open>
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
-          Do I need a prescription to order?
-          <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-        </summary>
-        <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">Some medications require a valid prescription, which you can send us via WhatsApp or bring in-store. Over-the-counter items and wellness products don't need one — our pharmacists are still happy to advise.</p>
-      </details>
-
-      <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
-          Do you deliver outside Lagos?
-          <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-        </summary>
-        <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">We currently deliver within Lagos, with select arrangements available outside the state. Message us on WhatsApp with your location and we'll confirm.</p>
-      </details>
-
-      <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
-          How do I place an order?
-          <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-        </summary>
-        <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">Send your prescription, product name, or a photo of what you need to our WhatsApp number, and our team will confirm price, availability, and delivery or pickup.</p>
-      </details>
-
-      <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
-          Are your products genuine?
-          <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-        </summary>
-        <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">Yes. Every product is sourced from verified manufacturers and licensed distributors — we do not stock counterfeit or expired medication.</p>
-      </details>
-
-      <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
-          Can I speak to a pharmacist before buying?
-          <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-        </summary>
-        <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">Always. Call, WhatsApp, or visit us in-store — our pharmacists are available to answer questions before you commit to any purchase.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ NEWSLETTER ============ -->
-<section class="py-24 sm:py-28 px-5 sm:px-8">
-  <div class="max-w-5xl mx-auto rounded-[2.5rem] bg-gradient-to-br from-brand-ink via-brand-violetDark to-brand-magenta px-8 py-16 sm:px-16 sm:py-20 text-center relative overflow-hidden">
-    <div class="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-brand-pink/20 blur-3xl"></div>
-    <div class="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-brand-violet/30 blur-3xl"></div>
-    <div class="relative">
-      <h2 class="font-display font-700 text-3xl sm:text-4xl text-white leading-tight">Get wellness tips in your inbox.</h2>
-      <p class="mt-4 text-white/75 max-w-md mx-auto">Occasional emails on health tips, new arrivals, and pharmacist-approved advice. No spam, unsubscribe anytime.</p>
-      <form id="newsletter-form" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input type="email" required placeholder="you@email.com" class="flex-1 rounded-full px-5 py-3.5 text-sm text-brand-ink placeholder:text-brand-ink/40 focus:outline-none focus:ring-2 focus:ring-brand-pink">
-        <button type="submit" class="rounded-full bg-white px-7 py-3.5 text-sm font-bold text-brand-ink hover:bg-brand-blush transition-colors">Subscribe</button>
-      </form>
-      <p id="newsletter-message" class="mt-4 text-sm text-brand-pink hidden">Thanks for subscribing! We'll be in touch. 💌</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="bg-brand-ink text-white/70">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-    <div>
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-10 w-10 rounded-full object-cover">
-        <span class="font-display font-700 text-white text-lg">BeyondTabs</span>
+      <p class="mt-5 text-brand-ink/70 leading-relaxed">
+        CellGevity is a glutathione-support supplement built around RiboCeine technology, a compound formulated to help
+        the body produce its own glutathione, one of its most important natural antioxidants. Customers often ask us
+        about it for general wellness support, from immune health to cellular repair.
+      </p>
+      <p class="mt-4 text-brand-ink/70 leading-relaxed">
+        As with any supplement, CellGevity isn't a substitute for medical treatment, and what works for one body may not
+        suit another. Watch the short video for an overview, then let's talk before you buy a single capsule.
+      </p>
+      <a href="https://wa.me/2349031218118?text=Hi%2C%20I%27d%20like%20to%20ask%20a%20pharmacist%20about%20CellGevity."
+        target="_blank" rel="noopener"
+        class="mt-7 inline-flex items-center gap-2 rounded-full bg-brand-ink px-6 py-3 text-sm font-bold text-white hover:bg-brand-violetDark transition-colors">
+        Ask a pharmacist about CellGevity
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
       </a>
-      <p class="mt-4 text-sm leading-relaxed max-w-xs">Feel better, feel alive. Genuine medication and honest pharmacist care in Jakande, Lagos.</p>
-      <div class="mt-5 flex items-center gap-3">
-        <a href="#" aria-label="Instagram" class="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-magenta transition-colors">
-          <svg class="h-4 w-4 fill-white" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.62.07 4.81 0 3.2 0 3.56-.07 4.81-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.61.07-4.85.07-3.2 0-3.6 0-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.61-.07-4.81 0-3.19 0-3.56.07-4.81.15-3.23 1.66-4.77 4.92-4.92C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
-        </a>
-        <a href="#" aria-label="TikTok" class="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-magenta transition-colors">
-          <svg class="h-4 w-4 fill-white" viewBox="0 0 24 24"><path d="M16.6 5.82c-.75-.82-1.16-1.9-1.16-3.02h-3.1v13.1a2.75 2.75 0 11-2.24-2.7v-3.14a5.85 5.85 0 105.44 5.83c0-.28-.02-.56-.07-.83a6.28 6.28 0 003.5 1.06v-3.1c-.9 0-1.72-.28-2.4-.76z"/></svg>
-        </a>
+    </div>
+  </section>
+
+  <!-- ============ HEALTH READS ============ -->
+  <section class="bg-brand-lavender py-24 sm:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div class="max-w-xl">
+          <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-violet">Health &amp;
+            Wellness Reads</span>
+          <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">
+            Things worth knowing before your next purchase.
+          </h2>
+        </div>
+        <a href="https://wa.me/2349031218118?text=Hi%2C%20I%27d%20love%20to%20read%20more%20health%20tips%20from%20BeyondTabs."
+          target="_blank" rel="noopener"
+          class="text-sm font-bold text-brand-magenta hover:text-brand-violetDark transition-colors">Ask us for more
+          tips →</a>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-7">
+        <article class="bg-white rounded-3xl overflow-hidden shadow-soft ring-1 ring-brand-ink/5 group">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="assets/images/tip-skincare.jpeg" alt="Skincare trends you should avoid"
+              class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-brand-magenta">Skincare</p>
+            <h3 class="mt-2 font-display font-700 text-lg text-brand-ink leading-snug">Skincare Trends You Should Avoid
+            </h3>
+            <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Not every viral routine belongs on your skin.
+              Here's what our pharmacists want you to know before you try the next trending hack.</p>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-soft ring-1 ring-brand-ink/5 group">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="assets/images/tip-actives.jpeg" alt="Using too many active ingredients together"
+              class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-brand-magenta">Skincare</p>
+            <h3 class="mt-2 font-display font-700 text-lg text-brand-ink leading-snug">Using Too Many Active Ingredients
+              Together</h3>
+            <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Layering retinol, vitamin C, and acids at once can
+              damage your skin barrier. Here's how to build a routine your skin will thank you for.</p>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-3xl overflow-hidden shadow-soft ring-1 ring-brand-ink/5 group">
+          <div
+            class="aspect-[4/3] overflow-hidden bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center">
+            <svg class="h-16 w-16 text-white/85" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-brand-magenta">Prescriptions</p>
+            <h3 class="mt-2 font-display font-700 text-lg text-brand-ink leading-snug">Reading Your Prescription Label
+              Correctly</h3>
+            <p class="mt-2 text-sm text-brand-ink/65 leading-relaxed">Dosage, frequency, warnings — it's all on the
+              label. A two-minute guide to understanding exactly what your pharmacist wants you to know.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS — two-row continuous marquee ============ -->
+  <section class="py-24 sm:py-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl">
+        <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Testimonials</span>
+        <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">
+          What our customers say.
+        </h2>
       </div>
     </div>
 
-    <div>
-      <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Explore</h4>
-      <ul class="mt-4 space-y-3 text-sm">
-        <li><a href="index.html" class="hover:text-brand-pink transition-colors">Home</a></li>
-        <li><a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a></li>
-        <li><a href="contact.html" class="hover:text-brand-pink transition-colors">Contact</a></li>
-      </ul>
+    <!-- Row 1 — scrolls left -->
+    <div class="marquee-row mt-14">
+      <div class="marquee-track">
+        <!-- set A -->
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5">
+          <div class="flex gap-1 text-brand-magenta">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"I sent my mum's prescription on WhatsApp
+            and it was ready before we even got there. That kind of service keeps us coming back."</blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Chiamaka O.</figcaption>
+        </figure>
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5">
+          <div class="flex gap-1 text-brand-magenta">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"First pharmacy where the pharmacist
+            actually sat me down and explained my medication instead of just handing it over."</blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Tunde A.</figcaption>
+        </figure>
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5">
+          <div class="flex gap-1 text-brand-magenta">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"Delivery came same day, properly packaged,
+            and exactly what I ordered. No counterfeits, no wahala."</blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Ifeoma B.</figcaption>
+        </figure>
+        <!-- set A repeated for seamless loop -->
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5"
+          aria-hidden="true">
+          <div class="flex gap-1 text-brand-magenta">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"I sent my mum's prescription on WhatsApp
+            and it was ready before we even got there. That kind of service keeps us coming back."</blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Chiamaka O.</figcaption>
+        </figure>
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5"
+          aria-hidden="true">
+          <div class="flex gap-1 text-brand-magenta">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"First pharmacy where the pharmacist
+            actually sat me down and explained my medication instead of just handing it over."</blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Tunde A.</figcaption>
+        </figure>
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-blush rounded-3xl p-8 ring-1 ring-brand-ink/5"
+          aria-hidden="true">
+          <div class="flex gap-1 text-brand-magenta">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"Delivery came same day, properly packaged,
+            and exactly what I ordered. No counterfeits, no wahala."</blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Ifeoma B.</figcaption>
+        </figure>
+      </div>
     </div>
 
-    <div>
-      <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Contact</h4>
-      <ul class="mt-4 space-y-3 text-sm">
-        <li><a href="tel:+2349031218118" class="hover:text-brand-pink transition-colors">0903 121 8118</a></li>
-        <li><a href="https://wa.me/2349031218118" target="_blank" rel="noopener" class="hover:text-brand-pink transition-colors">WhatsApp Us</a></li>
-        <li>Prince Ebeano Supermarket,<br>Platinum Way, Jakande, Lagos</li>
-      </ul>
+    <!-- Row 2 — scrolls right -->
+    <div class="marquee-row mt-6">
+      <div class="marquee-track reverse">
+        <!-- set B -->
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5">
+          <div class="flex gap-1 text-brand-violet">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"I always thought glutathione supplements
+            were a gamble until they broke it down for me in plain English. No pressure to buy, just information."
+          </blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Emeka N.</figcaption>
+        </figure>
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5">
+          <div class="flex gap-1 text-brand-violet">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"The WhatsApp ordering is so smooth. I
+            typed out what I needed, got a price in minutes, and picked it up on my way from work."</blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Blessing K.</figcaption>
+        </figure>
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5">
+          <div class="flex gap-1 text-brand-violet">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"As someone with an elderly parent on
+            multiple medications, having pharmacists who actually check for interactions gives me real peace of mind."
+          </blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Ngozi P.</figcaption>
+        </figure>
+        <!-- set B repeated for seamless loop -->
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5"
+          aria-hidden="true">
+          <div class="flex gap-1 text-brand-violet">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"I always thought glutathione supplements
+            were a gamble until they broke it down for me in plain English. No pressure to buy, just information."
+          </blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Emeka N.</figcaption>
+        </figure>
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5"
+          aria-hidden="true">
+          <div class="flex gap-1 text-brand-violet">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"The WhatsApp ordering is so smooth. I
+            typed out what I needed, got a price in minutes, and picked it up on my way from work."</blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Blessing K.</figcaption>
+        </figure>
+        <figure class="shrink-0 w-[320px] sm:w-[380px] bg-brand-lavender rounded-3xl p-8 ring-1 ring-brand-ink/5"
+          aria-hidden="true">
+          <div class="flex gap-1 text-brand-violet">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          </div>
+          <blockquote class="mt-5 text-brand-ink/75 leading-relaxed text-sm">"As someone with an elderly parent on
+            multiple medications, having pharmacists who actually check for interactions gives me real peace of mind."
+          </blockquote>
+          <figcaption class="mt-6 font-display font-700 text-brand-ink">Ngozi P.</figcaption>
+        </figure>
+      </div>
     </div>
+  </section>
 
-    <div>
-      <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Hours</h4>
-      <ul class="mt-4 space-y-3 text-sm">
-        <li class="flex justify-between gap-4"><span>Mon – Sat</span><span>8:00am – 10:00pm</span></li>
-        <li class="flex justify-between gap-4"><span>Sunday</span><span>10:00am – 8:00pm</span></li>
-      </ul>
+  <!-- ============ FAQ ============ -->
+  <section class="bg-brand-blush py-24 sm:py-28">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8">
+      <div class="text-center">
+        <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-violet">FAQ</span>
+        <h2 class="mt-4 font-display font-700 text-3xl sm:text-4xl text-brand-ink leading-tight">Questions people ask us
+          often.</h2>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft open:shadow-soft" open>
+          <summary
+            class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
+            Do I need a prescription to order?
+            <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">Some medications require a valid prescription,
+            which you can send us via WhatsApp or bring in-store. Over-the-counter items and wellness products don't
+            need one — our pharmacists are still happy to advise.</p>
+        </details>
+
+        <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft">
+          <summary
+            class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
+            Do you deliver outside Lagos?
+            <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">We currently deliver within Lagos, with select
+            arrangements available outside the state. Message us on WhatsApp with your location and we'll confirm.</p>
+        </details>
+
+        <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft">
+          <summary
+            class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
+            How do I place an order?
+            <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">Send your prescription, product name, or a
+            photo of what you need to our WhatsApp number, and our team will confirm price, availability, and delivery
+            or pickup.</p>
+        </details>
+
+        <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft">
+          <summary
+            class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
+            Are your products genuine?
+            <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">Yes. Every product is sourced from verified
+            manufacturers and licensed distributors — we do not stock counterfeit or expired medication.</p>
+        </details>
+
+        <details class="group bg-white rounded-2xl ring-1 ring-brand-ink/5 shadow-soft">
+          <summary
+            class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display font-700 text-brand-ink">
+            Can I speak to a pharmacist before buying?
+            <svg class="h-5 w-5 shrink-0 text-brand-magenta transition-transform group-open:rotate-45" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </summary>
+          <p class="px-6 pb-6 text-sm text-brand-ink/65 leading-relaxed">Always. Call, WhatsApp, or visit us in-store —
+            our pharmacists are available to answer questions before you commit to any purchase.</p>
+        </details>
+      </div>
     </div>
-  </div>
-  <div class="border-t border-white/10 py-6 px-5 sm:px-8 text-xs text-white/50 flex flex-col sm:flex-row gap-2 justify-between max-w-7xl mx-auto">
-    <p>© <span id="year"></span> BeyondTabs Pharmacy. All rights reserved.</p>
-    <p>Designed with care for feeling better, feeling alive.</p>
-  </div>
-</footer>
+  </section>
 
-<!-- ============ FLOATING WHATSAPP ============ -->
-<a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy" target="_blank" rel="noopener"
-   class="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] shadow-soft flex items-center justify-center hover:scale-105 transition-transform"
-   aria-label="Chat on WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-7 w-7 fill-white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.3.37-.44.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2 1.11.98 2.04 1.29 2.33 1.43.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
-</a>
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="py-24 sm:py-28 px-5 sm:px-8">
+    <div
+      class="max-w-5xl mx-auto rounded-[2.5rem] bg-gradient-to-br from-brand-ink via-brand-violetDark to-brand-magenta px-8 py-16 sm:px-16 sm:py-20 text-center relative overflow-hidden">
+      <div class="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-brand-pink/20 blur-3xl"></div>
+      <div class="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-brand-violet/30 blur-3xl"></div>
+      <div class="relative">
+        <h2 class="font-display font-700 text-3xl sm:text-4xl text-white leading-tight">Get wellness tips in your inbox.
+        </h2>
+        <p class="mt-4 text-white/75 max-w-md mx-auto">Occasional emails on health tips, new arrivals, and
+          pharmacist-approved advice. No spam, unsubscribe anytime.</p>
+        <form id="newsletter-form" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="email" required placeholder="you@email.com"
+            class="flex-1 rounded-full px-5 py-3.5 text-sm text-brand-ink placeholder:text-brand-ink/40 focus:outline-none focus:ring-2 focus:ring-brand-pink">
+          <button type="submit"
+            class="rounded-full bg-white px-7 py-3.5 text-sm font-bold text-brand-ink hover:bg-brand-blush transition-colors">Subscribe</button>
+        </form>
+        <p id="newsletter-message" class="mt-4 text-sm text-brand-pink hidden">Thanks for subscribing! We'll be in
+          touch. 💌</p>
+      </div>
+    </div>
+  </section>
 
-<!-- ============ AI CHAT WIDGET ============ -->
-<button id="chat-toggle" aria-label="Open chat with BeyondTabs assistant" class="fixed bottom-6 left-6 z-50 h-14 w-14 rounded-full bg-gradient-to-br from-brand-magenta to-brand-violet shadow-soft flex items-center justify-center hover:scale-105 transition-transform">
-  <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
-</button>
-
-<div id="chat-panel" class="chat-hidden fixed bottom-24 left-6 z-50 w-[92vw] max-w-sm bg-white rounded-3xl shadow-soft ring-1 ring-brand-ink/10 flex flex-col overflow-hidden" style="height:min(70vh,520px)">
-  <div class="bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-4 flex items-center justify-between shrink-0">
-    <div class="flex items-center gap-3">
-      <img src="assets/images/logo.png" alt="" class="h-9 w-9 rounded-full object-cover ring-2 ring-white/40">
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-brand-ink text-white/70">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <div>
-        <p class="font-display font-700 text-white leading-tight">Ask BeyondTabs</p>
-        <p class="text-[11px] text-white/75">General info · not medical advice</p>
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-10 w-10 rounded-full object-cover">
+          <span class="font-display font-700 text-white text-lg">BeyondTabs</span>
+        </a>
+        <p class="mt-4 text-sm leading-relaxed max-w-xs">Feel better, feel alive. Genuine medication and honest
+          pharmacist care in Jakande, Lagos.</p>
+        <div class="mt-5 flex items-center gap-3">
+          <a href="#" aria-label="Instagram"
+            class="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-magenta transition-colors">
+            <svg class="h-4 w-4 fill-white" viewBox="0 0 24 24">
+              <path
+                d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.62.07 4.81 0 3.2 0 3.56-.07 4.81-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.61.07-4.85.07-3.2 0-3.6 0-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.61-.07-4.81 0-3.19 0-3.56.07-4.81.15-3.23 1.66-4.77 4.92-4.92C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok"
+            class="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-magenta transition-colors">
+            <svg class="h-4 w-4 fill-white" viewBox="0 0 24 24">
+              <path
+                d="M16.6 5.82c-.75-.82-1.16-1.9-1.16-3.02h-3.1v13.1a2.75 2.75 0 11-2.24-2.7v-3.14a5.85 5.85 0 105.44 5.83c0-.28-.02-.56-.07-.83a6.28 6.28 0 003.5 1.06v-3.1c-.9 0-1.72-.28-2.4-.76z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Explore</h4>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li><a href="index.html" class="hover:text-brand-pink transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a></li>
+          <li><a href="contact.html" class="hover:text-brand-pink transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Contact</h4>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li><a href="tel:+2349031218118" class="hover:text-brand-pink transition-colors">0903 121 8118</a></li>
+          <li><a href="https://wa.me/2349031218118" target="_blank" rel="noopener"
+              class="hover:text-brand-pink transition-colors">WhatsApp Us</a></li>
+          <li>Prince Ebeano Supermarket,<br>Platinum Way, Jakande, Lagos</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Hours</h4>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex justify-between gap-4"><span>Mon – Sat</span><span>8:00am – 10:00pm</span></li>
+          <li class="flex justify-between gap-4"><span>Sunday</span><span>10:00am – 8:00pm</span></li>
+        </ul>
       </div>
     </div>
-    <button id="chat-close" aria-label="Close chat" class="h-8 w-8 rounded-full bg-white/15 flex items-center justify-center text-white hover:bg-white/25 transition-colors">
-      <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-    </button>
+    <div
+      class="border-t border-white/10 py-6 px-5 sm:px-8 text-xs text-white/50 flex flex-col sm:flex-row gap-2 justify-between max-w-7xl mx-auto">
+      <p>© <span id="year"></span> BeyondTabs Pharmacy. All rights reserved.</p>
+      <p>Designed with care for feeling better, feeling alive.</p>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP ============ -->
+  <a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy" target="_blank" rel="noopener"
+    class="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] shadow-soft flex items-center justify-center hover:scale-105 transition-transform"
+    aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-7 w-7 fill-white">
+      <path
+        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.3.37-.44.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2 1.11.98 2.04 1.29 2.33 1.43.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z" />
+    </svg>
+  </a>
+
+  <!-- ============ AI CHAT WIDGET ============ -->
+  <button id="chat-toggle" aria-label="Open chat with BeyondTabs assistant"
+    class="fixed bottom-6 left-6 z-50 h-14 w-14 rounded-full bg-gradient-to-br from-brand-magenta to-brand-violet shadow-soft flex items-center justify-center hover:scale-105 transition-transform">
+    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+    </svg>
+  </button>
+
+  <div id="chat-panel"
+    class="chat-hidden fixed bottom-24 left-6 z-50 w-[92vw] max-w-sm bg-white rounded-3xl shadow-soft ring-1 ring-brand-ink/10 flex flex-col overflow-hidden"
+    style="height:min(70vh,520px)">
+    <div
+      class="bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-4 flex items-center justify-between shrink-0">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/logo.png" alt="" class="h-9 w-9 rounded-full object-cover ring-2 ring-white/40">
+        <div>
+          <p class="font-display font-700 text-white leading-tight">Ask BeyondTabs</p>
+          <p class="text-[11px] text-white/75">General info · not medical advice</p>
+        </div>
+      </div>
+      <button id="chat-close" aria-label="Close chat"
+        class="h-8 w-8 rounded-full bg-white/15 flex items-center justify-center text-white hover:bg-white/25 transition-colors">
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="chat-messages" class="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-white"></div>
+
+    <form id="chat-form" class="border-t border-brand-ink/5 p-3 flex items-center gap-2 shrink-0">
+      <input id="chat-input" type="text" autocomplete="off" placeholder="Ask about hours, delivery, products…"
+        class="flex-1 rounded-full border border-brand-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+      <button type="submit" aria-label="Send message"
+        class="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center hover:opacity-90 transition-opacity">
+        <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+        </svg>
+      </button>
+    </form>
+    <div class="px-4 pb-3 flex items-center justify-between shrink-0">
+      <button id="chat-clear" type="button"
+        class="text-[11px] font-semibold text-brand-ink/40 hover:text-brand-magenta transition-colors">Clear
+        chat</button>
+      <p class="text-[11px] text-brand-ink/40">Saved on this device</p>
+    </div>
   </div>
 
-  <div id="chat-messages" class="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-white"></div>
-
-  <form id="chat-form" class="border-t border-brand-ink/5 p-3 flex items-center gap-2 shrink-0">
-    <input id="chat-input" type="text" autocomplete="off" placeholder="Ask about hours, delivery, products…"
-           class="flex-1 rounded-full border border-brand-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
-    <button type="submit" aria-label="Send message" class="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center hover:opacity-90 transition-opacity">
-      <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
-    </button>
-  </form>
-  <div class="px-4 pb-3 flex items-center justify-between shrink-0">
-    <button id="chat-clear" type="button" class="text-[11px] font-semibold text-brand-ink/40 hover:text-brand-magenta transition-colors">Clear chat</button>
-    <p class="text-[11px] text-brand-ink/40">Saved on this device</p>
-  </div>
-</div>
-
-<script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>
