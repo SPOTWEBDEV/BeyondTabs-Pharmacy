@@ -1,0 +1,2 @@
+This folder holds product images uploaded via server/products/upload_image.php.
+Make sure it's writable by the web server (e.g. chmod 755 or 775 depending on your host).

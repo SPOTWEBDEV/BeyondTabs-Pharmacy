@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — BeyondTabs Pharmacy</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            magenta: '#E2004F', magentaDark: '#B8003F', violet: '#9333EA', violetDark: '#6B21A8',
+            pink: '#FF7AC6', ink: '#2B0A3D', blush: '#FDF2F8', lavender: '#F4ECFE',
+          }
+        },
+        fontFamily: {
+          display: ['"Baloo 2"', 'cursive'],
+          body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        },
+        boxShadow: { soft: '0 20px 45px -18px rgba(43,10,61,0.35)' }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body class="font-body text-brand-ink bg-brand-blush/40 antialiased">
+
+<!-- ============ SIDEBAR ============ -->
+<div id="sidebar-overlay" class="hidden fixed inset-0 bg-brand-ink/50 z-30 lg:hidden"></div>
+
+<aside id="admin-sidebar" class="fixed inset-y-0 left-0 z-40 w-64 -translate-x-full lg:translate-x-0 transition-transform duration-200 bg-gradient-to-b from-brand-ink to-brand-violetDark flex flex-col">
+  <div class="h-20 flex items-center gap-3 px-6 shrink-0">
+    <img src="../assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/20">
+    <span class="leading-tight">
+      <span class="block font-display font-700 text-white">BeyondTabs</span>
+      <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-pink -mt-0.5">Admin</span>
+    </span>
+  </div>
+
+  <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1">
+    <a href="#" data-view="overview" data-label="Overview" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Overview
+    </a>
+    <a href="#" data-view="orders" data-label="Orders" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 2.25H7.5A2.25 2.25 0 005.25 4.5v15A2.25 2.25 0 007.5 21.75h9a2.25 2.25 0 002.25-2.25v-15A2.25 2.25 0 0016.5 2.25H15M9 2.25v3h6v-3M9 2.25a1.5 1.5 0 013 0M9 12h6M9 15.75h6"/></svg>
+      Orders
+    </a>
+    <a href="#" data-view="products" data-label="Products & Inventory" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375C2.754 3.75 2.25 4.254 2.25 4.875v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+      Products
+    </a>
+    <a href="#" data-view="subscriptions" data-label="Subscription Plans" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-4.5-3.75c0 1.243 1.847 2.25 4.5 2.25s4.5-1.007 4.5-2.25c0-.995-1.178-1.84-2.813-2.135m-3.374-3.365c-1.635-.296-2.813-1.14-2.813-2.135 0-1.243 2.015-2.25 4.5-2.25s4.5 1.007 4.5 2.25"/></svg>
+      Subscriptions
+    </a>
+    <a href="#" data-view="customers" data-label="Customers" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+      Customers
+    </a>
+    <a href="#" data-view="prescriptions" data-label="Prescriptions" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+      Prescriptions
+    </a>
+    <a href="#" data-view="consultations" data-label="Consultations" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+      Consultations
+    </a>
+    <a href="#" data-view="newsletter" data-label="Newsletter Subscribers" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+      Newsletter
+      <span id="newsletter-count" class="ml-auto text-[10px] font-bold bg-white/15 text-white px-2 py-0.5 rounded-full">0</span>
+    </a>
+    <a href="#" data-view="messages" data-label="Contact Messages" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
+      Messages
+      <span id="messages-count" class="ml-auto text-[10px] font-bold bg-brand-magenta text-white px-2 py-0.5 rounded-full">0</span>
+    </a>
+    <a href="#" data-view="settings" data-label="Settings" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.28z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Settings
+    </a>
+  </nav>
+
+  <div class="p-4 border-t border-white/10 space-y-1 shrink-0">
+    <a href="../index.html" target="_blank" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+      View live site
+    </a>
+    <button id="admin-logout" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/></svg>
+      Log out
+    </button>
+  </div>
+</aside>
+
+<!-- ============ MAIN ============ -->
+<div class="lg:pl-64 min-h-screen">
+
+  <!-- Topbar -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-brand-ink/5 h-20 flex items-center gap-4 px-5 sm:px-8">
+    <button id="sidebar-toggle" aria-label="Toggle sidebar" class="lg:hidden h-10 w-10 flex flex-col items-center justify-center gap-1.5 shrink-0">
+      <span class="block h-0.5 w-6 bg-brand-ink"></span>
+      <span class="block h-0.5 w-6 bg-brand-ink"></span>
+      <span class="block h-0.5 w-4 self-start ml-2 bg-brand-ink"></span>
+    </button>
+
+    <h1 id="page-title" class="font-display font-700 text-xl sm:text-2xl text-brand-ink shrink-0">Overview</h1>
+
+    <div class="hidden md:flex flex-1 max-w-sm relative ml-4">
+      <svg class="h-4 w-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-ink/30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+      <input type="search" placeholder="Search orders, customers…" class="w-full rounded-full bg-brand-blush/70 border-0 pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta placeholder:text-brand-ink/35">
+    </div>
+
+    <div class="ml-auto flex items-center gap-4 shrink-0">
+      <button aria-label="Notifications" class="relative h-10 w-10 rounded-full bg-brand-blush/70 flex items-center justify-center hover:bg-brand-blush transition-colors">
+        <svg class="h-5 w-5 text-brand-ink/60" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>
+        <span class="absolute top-2 right-2.5 h-2 w-2 rounded-full bg-brand-magenta"></span>
+      </button>
+      <div class="hidden sm:flex items-center gap-2.5 pl-3 border-l border-brand-ink/10">
+        <div class="h-9 w-9 rounded-full bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center text-white text-xs font-bold">AN</div>
+        <div class="leading-tight">
+          <p id="admin-name" class="text-sm font-semibold text-brand-ink">Admin</p>
+          <p id="admin-source" class="text-[11px] text-brand-ink/45">Staff account</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="p-5 sm:p-8 space-y-8">
+
+    <!-- ============ OVERVIEW ============ -->
+    <section data-view-panel="overview" class="space-y-8">
+      <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+          <div class="flex items-center justify-between">
+            <span class="h-10 w-10 rounded-xl bg-brand-magenta/10 flex items-center justify-center">
+              <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 2.25H7.5A2.25 2.25 0 005.25 4.5v15A2.25 2.25 0 007.5 21.75h9a2.25 2.25 0 002.25-2.25v-15A2.25 2.25 0 0016.5 2.25H15"/></svg>
+            </span>
+            <span class="text-xs font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">+12%</span>
+          </div>
+          <p class="mt-4 font-display font-800 text-3xl text-brand-ink">128</p>
+          <p class="text-sm text-brand-ink/50 mt-1">Orders this month</p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+          <div class="flex items-center justify-between">
+            <span class="h-10 w-10 rounded-xl bg-brand-violet/10 flex items-center justify-center">
+              <svg class="h-5 w-5 text-brand-violet" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33"/></svg>
+            </span>
+            <span class="text-xs font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">+8%</span>
+          </div>
+          <p class="mt-4 font-display font-800 text-3xl text-brand-ink">₦2.45M</p>
+          <p class="text-sm text-brand-ink/50 mt-1">Revenue this month</p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+          <div class="flex items-center justify-between">
+            <span class="h-10 w-10 rounded-xl bg-brand-magenta/10 flex items-center justify-center">
+              <svg class="h-5 w-5 text-brand-magenta" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3M4.5 19.5h6.75a2.25 2.25 0 002.25-2.25v-.375a3.375 3.375 0 00-3.375-3.375h-1.5a3.375 3.375 0 00-3.375 3.375v.375A2.25 2.25 0 004.5 19.5zm7.5-13.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z"/></svg>
+            </span>
+            <span class="text-xs font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">+34%</span>
+          </div>
+          <p class="mt-4 font-display font-800 text-3xl text-brand-ink">34</p>
+          <p class="text-sm text-brand-ink/50 mt-1">New customers</p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+          <div class="flex items-center justify-between">
+            <span class="h-10 w-10 rounded-xl bg-brand-violet/10 flex items-center justify-center">
+              <svg class="h-5 w-5 text-brand-violet" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </span>
+            <span class="text-xs font-bold text-amber-600 bg-amber-100 px-2 py-0.5 rounded-full">Review</span>
+          </div>
+          <p class="mt-4 font-display font-800 text-3xl text-brand-ink">7</p>
+          <p class="text-sm text-brand-ink/50 mt-1">Pending prescriptions</p>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-5">
+        <div class="lg:col-span-3 bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-display font-700 text-brand-ink">Orders this week</h3>
+            <span class="text-xs text-brand-ink/40">Last 7 days</span>
+          </div>
+          <div class="h-64"><canvas id="orders-chart"></canvas></div>
+        </div>
+        <div class="lg:col-span-2 bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-display font-700 text-brand-ink">Sales by category</h3>
+          </div>
+          <div class="h-64"><canvas id="category-chart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-5">
+        <div class="lg:col-span-3 bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-display font-700 text-brand-ink">Recent orders</h3>
+            <button data-view="orders" class="text-xs font-bold text-brand-magenta hover:text-brand-violetDark">View all →</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-left text-xs uppercase tracking-wide text-brand-ink/40 border-b border-brand-ink/5">
+                  <th class="pb-3 pr-4 font-semibold">Order</th>
+                  <th class="pb-3 pr-4 font-semibold">Customer</th>
+                  <th class="pb-3 pr-4 font-semibold">Total</th>
+                  <th class="pb-3 pl-2 font-semibold">Status</th>
+                </tr>
+              </thead>
+              <tbody id="recent-orders-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="lg:col-span-2 bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-display font-700 text-brand-ink">Needs attention</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="h-8 w-8 shrink-0 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+              </span>
+              <div>
+                <p class="text-sm font-semibold text-brand-ink">3 products low on stock</p>
+                <p class="text-xs text-brand-ink/50">Amoxicillin, Multivitamin, Sunscreen SPF50</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="h-8 w-8 shrink-0 rounded-full bg-brand-magenta/10 flex items-center justify-center text-brand-magenta">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+              </span>
+              <div>
+                <p class="text-sm font-semibold text-brand-ink">2 new contact messages</p>
+                <p class="text-xs text-brand-ink/50">Waiting for a reply</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="h-8 w-8 shrink-0 rounded-full bg-brand-violet/10 flex items-center justify-center text-brand-violet">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75"/></svg>
+              </span>
+              <div>
+                <p class="text-sm font-semibold text-brand-ink">7 prescriptions pending review</p>
+                <p class="text-xs text-brand-ink/50">Some submitted over 24 hours ago</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ORDERS ============ -->
+    <section data-view-panel="orders" class="hidden space-y-5">
+      <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+          <div class="flex flex-wrap gap-2">
+            <button data-order-filter="All" class="bg-brand-ink text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors">All</button>
+            <button data-order-filter="Pending" class="bg-brand-blush text-brand-ink/60 text-xs font-semibold px-4 py-2 rounded-full transition-colors">Pending</button>
+            <button data-order-filter="Processing" class="bg-brand-blush text-brand-ink/60 text-xs font-semibold px-4 py-2 rounded-full transition-colors">Processing</button>
+            <button data-order-filter="Delivered" class="bg-brand-blush text-brand-ink/60 text-xs font-semibold px-4 py-2 rounded-full transition-colors">Delivered</button>
+            <button data-order-filter="Cancelled" class="bg-brand-blush text-brand-ink/60 text-xs font-semibold px-4 py-2 rounded-full transition-colors">Cancelled</button>
+          </div>
+          <input id="order-search" type="search" placeholder="Search order ID or customer…" class="rounded-full bg-brand-blush/70 border-0 px-4 py-2 text-sm w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-brand-magenta placeholder:text-brand-ink/35">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs uppercase tracking-wide text-brand-ink/40 border-b border-brand-ink/5">
+                <th class="pb-3 pr-4 font-semibold">Order</th>
+                <th class="pb-3 pr-4 font-semibold">Customer</th>
+                <th class="pb-3 pr-4 font-semibold">Items</th>
+                <th class="pb-3 pr-4 font-semibold">Total</th>
+                <th class="pb-3 pr-4 font-semibold">Payment</th>
+                <th class="pb-3 pr-4 font-semibold">Status</th>
+                <th class="pb-3 pr-4 font-semibold">Date</th>
+                <th class="pb-3 pl-2 font-semibold text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="orders-table-body"></tbody>
+          </table>
+        </div>
+        <div id="orders-pagination"></div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section data-view-panel="products" class="hidden space-y-5">
+      <div class="flex flex-wrap items-center justify-end gap-3">
+        <a href="../products.html" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-brand-ink/15 px-5 py-2.5 text-xs font-bold text-brand-ink hover:bg-white transition-colors whitespace-nowrap">
+          View Public Shop Page ↗
+        </a>
+        <button id="add-product-btn" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-2.5 text-xs font-bold text-white shadow-soft hover:opacity-90 transition-opacity whitespace-nowrap">
+          + Add Product
+        </button>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="relative flex-1 min-w-[220px] max-w-xs">
+          <svg class="h-4 w-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-ink/30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+          <input id="product-search-admin" type="search" placeholder="Search products…" class="w-full rounded-full bg-brand-blush/70 border-0 pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta placeholder:text-brand-ink/35">
+        </div>
+        <span id="products-admin-count" class="text-xs text-brand-ink/40"></span>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+        <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs uppercase tracking-wide text-brand-ink/40 border-b border-brand-ink/5">
+              <th class="pb-3 pr-4 font-semibold">Product</th>
+              <th class="pb-3 pr-4 font-semibold">SKU</th>
+              <th class="pb-3 pr-4 font-semibold">Category</th>
+              <th class="pb-3 pr-4 font-semibold">Stock</th>
+              <th class="pb-3 pr-4 font-semibold">Price</th>
+              <th class="pb-3 pr-4 font-semibold">Status</th>
+              <th class="pb-3 pl-2 font-semibold text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="products-table-body"></tbody>
+        </table>
+        </div>
+        <div id="products-pagination"></div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT ADD/EDIT MODAL ============ -->
+    <div id="product-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div id="product-modal-overlay" class="absolute inset-0 bg-brand-ink/50"></div>
+      <div class="relative bg-white rounded-3xl shadow-soft w-full max-w-lg p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+        <div class="flex items-center justify-between mb-5">
+          <h3 id="product-modal-title" class="font-display font-700 text-xl text-brand-ink">Add Product</h3>
+          <button id="product-modal-close" type="button" class="h-8 w-8 rounded-full bg-brand-blush flex items-center justify-center text-brand-ink/60 hover:bg-brand-ink/10 transition-colors">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <form id="product-form" class="space-y-4">
+          <input type="hidden" name="id">
+          <input type="hidden" name="image">
+          <div>
+            <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Product image</label>
+            <div class="flex items-center gap-4">
+              <div id="product-image-preview" class="h-20 w-20 shrink-0 rounded-2xl bg-brand-blush ring-1 ring-brand-ink/5 flex items-center justify-center overflow-hidden">
+                <svg class="h-8 w-8 text-brand-ink/25" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 20.25h18M3 3.75h18a.75.75 0 01.75.75v15a.75.75 0 01-.75.75H3a.75.75 0 01-.75-.75v-15A.75.75 0 013 3.75z"/></svg>
+              </div>
+              <div class="flex-1">
+                <input id="product-image-input" type="file" accept="image/png, image/jpeg, image/webp"
+                       class="w-full text-xs text-brand-ink/60 file:mr-3 file:rounded-full file:border-0 file:bg-brand-blush file:px-4 file:py-2 file:text-xs file:font-bold file:text-brand-ink hover:file:bg-brand-ink/10">
+                <p class="mt-1.5 text-[11px] text-brand-ink/40">PNG, JPG or WEBP. Resized automatically — leave empty to keep the category icon.</p>
+                <button type="button" id="product-image-remove" class="hidden mt-1.5 text-[11px] font-semibold text-brand-magenta hover:text-brand-violetDark">Remove image</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Product name</label>
+            <input name="name" type="text" required placeholder="e.g. Vitamin C Brightening Serum"
+                   class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Category</label>
+              <select name="category" required class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+                <option value="Medications">Medications</option>
+                <option value="Supplements">Supplements</option>
+                <option value="Skincare">Skincare</option>
+                <option value="Wellness">Wellness</option>
+                <option value="Mother & Baby">Mother &amp; Baby</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Price (₦)</label>
+              <input name="price" type="number" min="0" step="50" required placeholder="5000"
+                     class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Stock quantity</label>
+              <input name="stock" type="number" min="0" required placeholder="20"
+                     class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+            </div>
+            <div class="flex items-end pb-3">
+              <label class="inline-flex items-center gap-2 text-sm font-semibold text-brand-ink/70">
+                <input name="rx" type="checkbox" class="rounded border-brand-ink/20 text-brand-magenta focus:ring-brand-magenta">
+                Requires prescription
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Short description</label>
+            <textarea name="blurb" rows="3" required placeholder="One or two sentences shown on the product card"
+                      class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent resize-none"></textarea>
+          </div>
+          <p class="text-xs text-brand-ink/40">Status (In Stock / Low Stock / Out of Stock) is calculated automatically from the quantity above.</p>
+          <p id="product-form-error" class="hidden text-sm text-brand-magenta"></p>
+          <div class="flex items-center gap-3 pt-2">
+            <button type="submit" id="product-form-submit" class="flex-1 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-6 py-3 text-sm font-bold text-white shadow-soft hover:opacity-90 transition-opacity">Save Product</button>
+            <button type="button" id="product-modal-cancel" class="rounded-full border border-brand-ink/15 px-6 py-3 text-sm font-bold text-brand-ink hover:bg-brand-blush transition-colors">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ SUBSCRIPTIONS ============ -->
+    <section data-view-panel="subscriptions" class="hidden space-y-5">
+      <div class="flex flex-wrap items-center justify-end gap-3">
+        <a href="../subscriptions.html" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-brand-ink/15 px-5 py-2.5 text-xs font-bold text-brand-ink hover:bg-white transition-colors whitespace-nowrap">
+          View Public Page ↗
+        </a>
+        <button id="add-plan-btn" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-2.5 text-xs font-bold text-white shadow-soft hover:opacity-90 transition-opacity whitespace-nowrap">
+          + Add Plan
+        </button>
+      </div>
+      <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+        <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs uppercase tracking-wide text-brand-ink/40 border-b border-brand-ink/5">
+              <th class="pb-3 pr-4 font-semibold">Plan</th>
+              <th class="pb-3 pr-4 font-semibold">Price</th>
+              <th class="pb-3 pr-4 font-semibold">Features</th>
+              <th class="pb-3 pr-4 font-semibold">Popular</th>
+              <th class="pb-3 pl-2 font-semibold text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="plans-table-body"></tbody>
+        </table>
+        </div>
+        <div id="plans-pagination"></div>
+      </div>
+    </section>
+
+    <!-- ============ PLAN ADD/EDIT MODAL ============ -->
+    <div id="plan-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div id="plan-modal-overlay" class="absolute inset-0 bg-brand-ink/50"></div>
+      <div class="relative bg-white rounded-3xl shadow-soft w-full max-w-lg p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+        <div class="flex items-center justify-between mb-5">
+          <h3 id="plan-modal-title" class="font-display font-700 text-xl text-brand-ink">Add Plan</h3>
+          <button id="plan-modal-close" type="button" class="h-8 w-8 rounded-full bg-brand-blush flex items-center justify-center text-brand-ink/60 hover:bg-brand-ink/10 transition-colors">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <form id="plan-form" class="space-y-4">
+          <input type="hidden" name="id">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Plan name</label>
+              <input name="name" type="text" required placeholder="e.g. Plus"
+                     class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Price (₦ / month)</label>
+              <input name="price" type="number" min="0" step="500" required placeholder="12000"
+                     class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Tagline</label>
+            <input name="tagline" type="text" placeholder="e.g. For regular medication & wellness"
+                   class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Features (one per line)</label>
+            <textarea name="features" rows="5" required placeholder="Free delivery on every order&#10;10% off every order&#10;1 free consultation / month"
+                      class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent resize-none"></textarea>
+          </div>
+          <label class="inline-flex items-center gap-2 text-sm font-semibold text-brand-ink/70">
+            <input name="is_popular" type="checkbox" class="rounded border-brand-ink/20 text-brand-magenta focus:ring-brand-magenta">
+            Mark as "Most Popular"
+          </label>
+          <p id="plan-form-error" class="hidden text-sm text-brand-magenta"></p>
+          <div class="flex items-center gap-3 pt-2">
+            <button type="submit" id="plan-form-submit" class="flex-1 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-6 py-3 text-sm font-bold text-white shadow-soft hover:opacity-90 transition-opacity">Save Plan</button>
+            <button type="button" id="plan-modal-cancel" class="rounded-full border border-brand-ink/15 px-6 py-3 text-sm font-bold text-brand-ink hover:bg-brand-blush transition-colors">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ CUSTOMERS ============ -->
+    <section data-view-panel="customers" class="hidden space-y-5">
+      <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+        <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs uppercase tracking-wide text-brand-ink/40 border-b border-brand-ink/5">
+              <th class="pb-3 pr-4 font-semibold">Name</th>
+              <th class="pb-3 pr-4 font-semibold">Phone</th>
+              <th class="pb-3 pr-4 font-semibold">Email</th>
+              <th class="pb-3 pl-2 font-semibold">Registered</th>
+            </tr>
+          </thead>
+          <tbody id="customers-table-body"></tbody>
+        </table>
+        </div>
+        <div id="customers-pagination"></div>
+      </div>
+    </section>
+
+    <!-- ============ PRESCRIPTIONS ============ -->
+    <section data-view-panel="prescriptions" class="hidden space-y-5">
+      <div class="rounded-2xl bg-brand-blush p-5">
+        <p class="text-sm text-brand-ink/70">Prescriptions sent in via WhatsApp or the contact form. Approve once verified, or flag for clarification with the customer.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+        <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs uppercase tracking-wide text-brand-ink/40 border-b border-brand-ink/5">
+              <th class="pb-3 pr-4 font-semibold">Patient</th>
+              <th class="pb-3 pr-4 font-semibold">Medication requested</th>
+              <th class="pb-3 pr-4 font-semibold">Submitted</th>
+              <th class="pb-3 pr-4 font-semibold">Status</th>
+              <th class="pb-3 pl-2 font-semibold text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody id="prescriptions-table-body"></tbody>
+        </table>
+        </div>
+        <div id="prescriptions-pagination"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONSULTATIONS ============ -->
+    <section data-view-panel="consultations" class="hidden space-y-5">
+      <div class="flex flex-wrap items-center justify-end gap-4">
+        <a href="../consultation.html" target="_blank" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-2.5 text-xs font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap">
+          Open Booking Page ↗
+        </a>
+      </div>
+      <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+        <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs uppercase tracking-wide text-brand-ink/40 border-b border-brand-ink/5">
+              <th class="pb-3 pr-4 font-semibold">Client</th>
+              <th class="pb-3 pr-4 font-semibold">Wants to see</th>
+              <th class="pb-3 pr-4 font-semibold">Phone</th>
+              <th class="pb-3 pr-4 font-semibold">Date & Time</th>
+              <th class="pb-3 pl-2 font-semibold">Status</th>
+            </tr>
+          </thead>
+          <tbody id="consultations-table-body"></tbody>
+        </table>
+        </div>
+        <div id="consultations-pagination"></div>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section data-view-panel="newsletter" class="hidden space-y-5">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <p class="text-sm text-brand-ink/60">Signups from the homepage newsletter form.</p>
+        <button id="newsletter-export" class="inline-flex items-center gap-2 rounded-full border border-brand-ink/15 px-5 py-2.5 text-xs font-bold text-brand-ink hover:bg-brand-blush transition-colors">
+          Export CSV
+        </button>
+      </div>
+      <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+        <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs uppercase tracking-wide text-brand-ink/40 border-b border-brand-ink/5">
+              <th class="pb-3 pr-4 font-semibold">Email</th>
+              <th class="pb-3 pr-4 font-semibold">Subscribed</th>
+              <th class="pb-3 pl-2 font-semibold text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody id="newsletter-table-body"></tbody>
+        </table>
+        </div>
+        <div id="newsletter-pagination"></div>
+      </div>
+    </section>
+
+    <!-- ============ MESSAGES ============ -->
+    <section data-view-panel="messages" class="hidden space-y-5">
+      <p class="text-sm text-brand-ink/60">Submissions from the Contact page form.</p>
+      <div class="bg-white rounded-3xl p-6 shadow-soft ring-1 ring-brand-ink/5">
+        <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs uppercase tracking-wide text-brand-ink/40 border-b border-brand-ink/5">
+              <th class="pb-3 pr-4 font-semibold">Name</th>
+              <th class="pb-3 pr-4 font-semibold">Contact</th>
+              <th class="pb-3 pr-4 font-semibold">Message</th>
+              <th class="pb-3 pr-4 font-semibold">Received</th>
+              <th class="pb-3 pr-4 font-semibold">Status</th>
+              <th class="pb-3 pl-2 font-semibold text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody id="messages-table-body"></tbody>
+        </table>
+        </div>
+        <div id="messages-pagination"></div>
+      </div>
+    </section>
+
+    <!-- ============ SETTINGS ============ -->
+    <section data-view-panel="settings" class="hidden space-y-5">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-soft ring-1 ring-brand-ink/5 max-w-2xl">
+        <h3 class="font-display font-700 text-lg text-brand-ink">Store information</h3>
+        <form id="settings-form" class="mt-6 space-y-5">
+          <div>
+            <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Store name</label>
+            <input name="storeName" type="text" placeholder="BeyondTabs Pharmacy" class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta">
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Phone / WhatsApp</label>
+              <input name="phone" type="text" placeholder="0903 121 8118" class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Opening hours (Mon–Sat)</label>
+              <input name="hoursWeekday" type="text" placeholder="8:00am – 10:00pm" class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Address</label>
+            <input name="address" type="text" placeholder="Prince Ebeano Supermarket, Platinum Way, Jakande, Lagos" class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta">
+          </div>
+          <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-7 py-3 text-sm font-bold text-white shadow-soft hover:opacity-90 transition-opacity">
+            Save Changes
+          </button>
+          <p id="settings-saved" class="hidden text-sm font-semibold text-green-600">Saved ✓</p>
+          <p id="settings-error" class="hidden text-sm text-brand-magenta"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="pt-6 pb-2 text-center text-xs text-brand-ink/35">
+      © <span id="year"></span> BeyondTabs Pharmacy · Admin dashboard
+    </footer>
+  </main>
+</div>
+
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>

@@ -67,59 +67,58 @@
 
   <!-- ============ NAV ============ -->
   <header class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-brand-ink/5">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 shrink-0">
-        <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo"
-          class="h-11 w-11 rounded-full object-cover ring-1 ring-brand-ink/10">
-        <span class="leading-tight">
-          <span class="block font-display font-700 text-lg text-brand-ink tracking-tight">Beyond<span
-              class="text-brand-magenta">Tabs</span></span>
-          <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-violet -mt-1">Pharmacy</span>
-        </span>
-      </a>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-11 w-11 rounded-full object-cover ring-1 ring-brand-ink/10">
+      <span class="leading-tight">
+        <span class="block font-display font-700 text-lg text-brand-ink tracking-tight">Beyond<span class="text-brand-magenta">Tabs</span></span>
+        <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-violet -mt-1">Pharmacy</span>
+      </span>
+    </a>
 
-      <nav class="hidden md:flex items-center gap-10 font-medium text-sm text-brand-ink/80">
-        <a href="index.html"
-          class="relative py-1 text-brand-magenta after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-brand-magenta">Home</a>
-        <a href="about.html" class="relative py-1 hover:text-brand-magenta transition-colors">About</a>
-        <a href="contact.html" class="relative py-1 hover:text-brand-magenta transition-colors">Contact</a>
-      </nav>
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-brand-ink/80">
+      <a href="index.html" class="relative py-1 hover:text-brand-magenta transition-colors text-brand-magenta after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-brand-magenta">Home</a>
+      <a href="about.html" class="relative py-1 hover:text-brand-magenta transition-colors">About</a>
+      <a href="products.html" class="relative py-1 ">Shop</a>
+      <a href="contact.html" class="relative py-1 hover:text-brand-magenta transition-colors">Contact</a>
+    </nav>
 
-      <div class="hidden md:flex items-center gap-3">
-        <a href="tel:+2349031218118"
-          class="text-sm font-semibold text-brand-ink/70 hover:text-brand-magenta transition-colors">0903 121 8118</a>
-        <a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy%2C%20I%27d%20like%20to%20ask%20about..."
-          target="_blank" rel="noopener"
-          class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:opacity-90 transition-opacity">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-white">
-            <path
-              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.3.37-.44.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2 1.11.98 2.04 1.29 2.33 1.43.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z" />
-          </svg>
-          WhatsApp
-        </a>
-      </div>
-
-      <button id="nav-toggle" aria-label="Toggle menu"
-        class="md:hidden h-10 w-10 flex flex-col items-center justify-center gap-1.5">
-        <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
-        <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
-        <span class="block h-0.5 w-4 self-end bg-brand-ink transition-all"></span>
-      </button>
-    </div>
-
-    <div id="mobile-menu" class="hidden md:hidden border-t border-brand-ink/5 bg-white px-5 pb-6 pt-4 space-y-4">
-      <a href="index.html" class="block font-semibold text-brand-magenta">Home</a>
-      <a href="about.html" class="block font-medium text-brand-ink/80">About</a>
-      <a href="contact.html" class="block font-medium text-brand-ink/80">Contact</a>
-      <div class="flex items-center gap-3 pt-2">
-        <a href="tel:+2349031218118" class="text-sm font-semibold text-brand-ink/70">0903 121 8118</a>
-      </div>
-      <a href="https://wa.me/2349031218118" target="_blank" rel="noopener"
-        class="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-3 text-sm font-semibold text-white">
-        Chat on WhatsApp
+    <div class="hidden lg:flex items-center gap-5 shrink-0">
+      <a href="login.html" class="text-sm font-semibold text-brand-ink/70 hover:text-brand-magenta transition-colors">Login</a>
+      <a href="register.html" class="text-sm font-semibold text-brand-ink/70 hover:text-brand-magenta transition-colors">Register</a>
+      <a href="consultation.html"
+         class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:opacity-90 transition-opacity whitespace-nowrap">
+        Book Consultation
       </a>
     </div>
-  </header>
+
+    <button id="nav-toggle" aria-label="Toggle menu" class="lg:hidden h-10 w-10 flex flex-col items-center justify-center gap-1.5 shrink-0">
+      <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
+      <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
+      <span class="block h-0.5 w-4 self-end bg-brand-ink transition-all"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-brand-ink/5 bg-white px-5 pb-6 pt-4 space-y-4">
+    <a href="index.html" class="block font-medium text-brand-ink/80">Home</a>
+    <a href="about.html" class="block font-medium text-brand-ink/80">About</a>
+    <a href="products.html" class="block font-semibold text-brand-magenta">Shop</a>
+    <a href="contact.html" class="block font-medium text-brand-ink/80">Contact</a>
+    <div class="h-px bg-brand-ink/10"></div>
+    <a href="https://www.biolife24h.com/login" target="_blank" rel="noopener" class="block font-medium text-brand-ink/80">Login</a>
+    <a href="https://www.biolife24h.com/register" target="_blank" rel="noopener" class="block font-medium text-brand-ink/80">Register</a>
+    <a href="https://www.biolife24h.com/aesthetics" target="_blank" rel="noopener"
+       class="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-3 text-sm font-semibold text-white mt-2">
+      Book Consultation
+    </a>
+    <div class="flex items-center gap-3 pt-2">
+      <a href="tel:+2349031218118" class="text-sm font-semibold text-brand-ink/70">0903 121 8118</a>
+    </div>
+    <a href="https://wa.me/2349031218118" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 rounded-full border border-brand-ink/15 px-5 py-3 text-sm font-semibold text-brand-ink">
+      Chat on WhatsApp
+    </a>
+  </div>
+</header>
 
   <!-- ============ HERO (video header) ============ -->
   <section class="relative isolate overflow-hidden h-[92vh] min-h-[600px] flex items-end">

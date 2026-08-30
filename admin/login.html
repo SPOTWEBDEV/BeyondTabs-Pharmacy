@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Login — BeyondTabs Pharmacy</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            magenta: '#E2004F', magentaDark: '#B8003F', violet: '#9333EA', violetDark: '#6B21A8',
+            pink: '#FF7AC6', ink: '#2B0A3D', blush: '#FDF2F8', lavender: '#F4ECFE',
+          }
+        },
+        fontFamily: {
+          display: ['"Baloo 2"', 'cursive'],
+          body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        },
+        boxShadow: { soft: '0 20px 45px -18px rgba(43,10,61,0.35)' }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="font-body text-brand-ink bg-brand-blush antialiased min-h-screen flex items-center justify-center p-5">
+
+<div class="w-full max-w-md">
+  <div class="text-center mb-8">
+    <a href="../index.html" class="inline-flex items-center gap-3">
+      <img src="../assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-12 w-12 rounded-full object-cover ring-1 ring-brand-ink/10">
+      <span class="leading-tight text-left">
+        <span class="block font-display font-700 text-xl text-brand-ink tracking-tight">Beyond<span class="text-brand-magenta">Tabs</span></span>
+        <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-violet -mt-1">Pharmacy</span>
+      </span>
+    </a>
+  </div>
+
+  <div class="bg-white rounded-3xl shadow-soft ring-1 ring-brand-ink/5 p-8 sm:p-10">
+    <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Staff Access</span>
+    <h1 class="mt-3 font-display font-700 text-2xl sm:text-3xl text-brand-ink">Sign in to the dashboard</h1>
+    <p class="mt-2 text-sm text-brand-ink/60 leading-relaxed">For BeyondTabs staff and pharmacists only.</p>
+
+    <form id="admin-login-form" class="mt-7 space-y-5">
+      <div>
+        <label for="admin-email" class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Email address</label>
+        <input id="admin-email" type="email" required placeholder="you@beyondtabspharmacy.ng"
+               class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+      </div>
+      <div>
+        <label for="admin-password" class="block text-sm font-semibold text-brand-ink/70 mb-1.5">Password</label>
+        <input id="admin-password" type="password" required placeholder="••••••••"
+               class="w-full rounded-xl border border-brand-ink/10 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+      </div>
+      <div class="flex items-center justify-between text-sm">
+        <label class="inline-flex items-center gap-2 text-brand-ink/60">
+          <input type="checkbox" class="rounded border-brand-ink/20 text-brand-magenta focus:ring-brand-magenta">
+          Keep me signed in
+        </label>
+        <a href="#" class="font-semibold text-brand-magenta hover:text-brand-violetDark transition-colors">Forgot password?</a>
+      </div>
+      <button type="submit" class="w-full rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-6 py-3.5 text-sm font-bold text-white shadow-soft hover:opacity-90 transition-opacity">
+        Sign In
+      </button>
+      <p id="admin-login-error" class="hidden text-sm text-brand-magenta text-center"></p>
+    </form>
+  </div>
+
+  <p class="text-center text-sm text-brand-ink/50 mt-6">
+    <a href="../index.html" class="hover:text-brand-magenta transition-colors">← Back to the main site</a>
+  </p>
+</div>
+
+<script>
+  const form = document.getElementById('admin-login-form');
+  const errorEl = document.getElementById('admin-login-error');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.classList.add('hidden');
+    const email = document.getElementById('admin-email').value.trim();
+    const password = document.getElementById('admin-password').value;
+    if (!email || !password) {
+      errorEl.textContent = 'Please enter both email and password.';
+      errorEl.classList.remove('hidden');
+      return;
+    }
+
+    try {
+      const res = await fetch('../server/auth/login.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, admin_only: true }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        localStorage.setItem('beyondtabs_admin_auth', JSON.stringify({ ...result.user, signedInAt: new Date().toISOString() }));
+        window.location.href = 'index.html';
+        return;
+      }
+      errorEl.textContent = result.error || 'Incorrect email or password.';
+      errorEl.classList.remove('hidden');
+    } catch (err) {
+      errorEl.textContent = "We couldn't reach the server to sign you in. Please check your connection and try again.";
+      errorEl.classList.remove('hidden');
+    }
+  });
+</script>
+</body>
+</html>
