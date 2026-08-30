@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — BeyondTabs Pharmacy</title>
+<meta name="description" content="Browse medications, supplements, skincare and wellness products from BeyondTabs Pharmacy, Jakande, Lagos. Order any item directly on WhatsApp.">
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            magenta: '#E2004F', magentaDark: '#B8003F', violet: '#9333EA', violetDark: '#6B21A8',
+            pink: '#FF7AC6', ink: '#2B0A3D', blush: '#FDF2F8', lavender: '#F4ECFE',
+          }
+        },
+        fontFamily: {
+          display: ['"Baloo 2"', 'cursive'],
+          body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        },
+        boxShadow: { soft: '0 20px 45px -18px rgba(43,10,61,0.35)' }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-body text-brand-ink bg-white antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-brand-ink/5">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-11 w-11 rounded-full object-cover ring-1 ring-brand-ink/10">
+      <span class="leading-tight">
+        <span class="block font-display font-700 text-lg text-brand-ink tracking-tight">Beyond<span class="text-brand-magenta">Tabs</span></span>
+        <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-violet -mt-1">Pharmacy</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-brand-ink/80">
+      <a href="index.html" class="relative py-1 hover:text-brand-magenta transition-colors">Home</a>
+      <a href="about.html" class="relative py-1 hover:text-brand-magenta transition-colors">About</a>
+      <a href="products.html" class="relative py-1 text-brand-magenta after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-brand-magenta">Shop</a>
+      <a href="contact.html" class="relative py-1 hover:text-brand-magenta transition-colors">Contact</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-5 shrink-0">
+      <a href="login.html" class="text-sm font-semibold text-brand-ink/70 hover:text-brand-magenta transition-colors">Login</a>
+      <a href="register.html" class="text-sm font-semibold text-brand-ink/70 hover:text-brand-magenta transition-colors">Register</a>
+      <a href="consultation.html"
+         class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:opacity-90 transition-opacity whitespace-nowrap">
+        Book Consultation
+      </a>
+    </div>
+
+    <button id="nav-toggle" aria-label="Toggle menu" class="lg:hidden h-10 w-10 flex flex-col items-center justify-center gap-1.5 shrink-0">
+      <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
+      <span class="block h-0.5 w-6 bg-brand-ink transition-all"></span>
+      <span class="block h-0.5 w-4 self-end bg-brand-ink transition-all"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-brand-ink/5 bg-white px-5 pb-6 pt-4 space-y-4">
+    <a href="index.html" class="block font-medium text-brand-ink/80">Home</a>
+    <a href="about.html" class="block font-medium text-brand-ink/80">About</a>
+    <a href="products.html" class="block font-semibold text-brand-magenta">Shop</a>
+    <a href="contact.html" class="block font-medium text-brand-ink/80">Contact</a>
+    <div class="h-px bg-brand-ink/10"></div>
+    <a href="https://www.biolife24h.com/login" target="_blank" rel="noopener" class="block font-medium text-brand-ink/80">Login</a>
+    <a href="https://www.biolife24h.com/register" target="_blank" rel="noopener" class="block font-medium text-brand-ink/80">Register</a>
+    <a href="https://www.biolife24h.com/aesthetics" target="_blank" rel="noopener"
+       class="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-3 text-sm font-semibold text-white mt-2">
+      Book Consultation
+    </a>
+    <div class="flex items-center gap-3 pt-2">
+      <a href="tel:+2349031218118" class="text-sm font-semibold text-brand-ink/70">0903 121 8118</a>
+    </div>
+    <a href="https://wa.me/2349031218118" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 rounded-full border border-brand-ink/15 px-5 py-3 text-sm font-semibold text-brand-ink">
+      Chat on WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="relative isolate overflow-hidden pt-40 pb-16 sm:pt-48 sm:pb-20">
+  <img src="assets/images/contact-hero.jpg" alt="" class="absolute inset-0 h-full w-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-b from-brand-ink/85 via-brand-violetDark/60 to-white"></div>
+  <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
+    <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-brand-pink">Shop BeyondTabs</span>
+    <h1 class="mt-5 font-display font-800 text-4xl sm:text-6xl text-white leading-tight">Medications, supplements &amp; skincare.</h1>
+    <p class="mt-5 text-white/85 max-w-xl mx-auto leading-relaxed">Browse our catalog and order straight to WhatsApp — no account needed. Every item is genuine, pharmacist-approved, and ready for pickup or delivery.</p>
+  </div>
+</section>
+
+<!-- ============ CHECKOUT NOTE ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 -mt-6 relative z-10">
+  <div class="bg-white rounded-3xl shadow-soft ring-1 ring-brand-ink/5 p-5 sm:p-6 flex flex-wrap items-center justify-between gap-4">
+    <p class="text-sm text-brand-ink/65 max-w-xl">Tap "Order" on any product to send us a pre-filled WhatsApp message — we'll confirm price, availability, and delivery or pickup from there. Prefer full online checkout and order tracking? </p>
+    <a href="https://www.biolife24h.com/shop" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-brand-ink px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-violetDark transition-colors whitespace-nowrap">
+      Shop online with checkout ↗
+    </a>
+  </div>
+</section>
+
+<!-- ============ CATALOG ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+    <div class="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1" id="product-filters"></div>
+    <div class="flex items-center gap-3 shrink-0">
+      <div class="relative">
+        <svg class="h-4 w-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-ink/30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+        <input id="product-search" type="search" placeholder="Search products…" class="rounded-full bg-brand-blush/70 border-0 pl-10 pr-4 py-2.5 text-sm w-full sm:w-56 focus:outline-none focus:ring-2 focus:ring-brand-magenta placeholder:text-brand-ink/35">
+      </div>
+      <span id="product-count" class="text-xs text-brand-ink/40 whitespace-nowrap"></span>
+    </div>
+  </div>
+
+  <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+</section>
+
+<!-- ============ NEED SOMETHING ELSE ============ -->
+<section class="px-5 sm:px-8 pb-20 sm:pb-28">
+  <div class="max-w-5xl mx-auto rounded-[2.5rem] bg-gradient-to-br from-brand-ink via-brand-violetDark to-brand-magenta px-8 py-14 sm:px-16 sm:py-16 text-center relative overflow-hidden">
+    <div class="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-brand-pink/20 blur-3xl"></div>
+    <div class="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-brand-violet/30 blur-3xl"></div>
+    <div class="relative">
+      <h2 class="font-display font-700 text-2xl sm:text-3xl text-white leading-tight">Can't find what you're looking for?</h2>
+      <p class="mt-3 text-white/75 max-w-md mx-auto">This is a snapshot of our catalog — we stock far more in-store. Send us the product name and we'll check availability.</p>
+      <a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy%2C%20I%27m%20looking%20for%20a%20product%20that%27s%20not%20listed%20on%20your%20site." target="_blank" rel="noopener"
+         class="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-brand-ink hover:bg-brand-blush transition-colors">
+        Ask on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-brand-ink text-white/70">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/images/logo.png" alt="BeyondTabs Pharmacy logo" class="h-10 w-10 rounded-full object-cover">
+        <span class="font-display font-700 text-white text-lg">BeyondTabs</span>
+      </a>
+      <p class="mt-4 text-sm leading-relaxed max-w-xs">Feel better, feel alive. Genuine medication and honest pharmacist care in Jakande, Lagos.</p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="#" aria-label="Instagram" class="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-magenta transition-colors">
+          <svg class="h-4 w-4 fill-white" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.62.07 4.81 0 3.2 0 3.56-.07 4.81-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.61.07-4.85.07-3.2 0-3.6 0-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.61-.07-4.81 0-3.19 0-3.56.07-4.81.15-3.23 1.66-4.77 4.92-4.92C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" class="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-magenta transition-colors">
+          <svg class="h-4 w-4 fill-white" viewBox="0 0 24 24"><path d="M16.6 5.82c-.75-.82-1.16-1.9-1.16-3.02h-3.1v13.1a2.75 2.75 0 11-2.24-2.7v-3.14a5.85 5.85 0 105.44 5.83c0-.28-.02-.56-.07-.83a6.28 6.28 0 003.5 1.06v-3.1c-.9 0-1.72-.28-2.4-.76z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Explore</h4>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="index.html" class="hover:text-brand-pink transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a></li>
+        <li><a href="products.html" class="hover:text-brand-pink transition-colors">Shop</a></li>
+        <li><a href="contact.html" class="hover:text-brand-pink transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Contact</h4>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="tel:+2349031218118" class="hover:text-brand-pink transition-colors">0903 121 8118</a></li>
+        <li><a href="https://wa.me/2349031218118" target="_blank" rel="noopener" class="hover:text-brand-pink transition-colors">WhatsApp Us</a></li>
+        <li>Prince Ebeano Supermarket,<br>Platinum Way, Jakande, Lagos</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-display font-700 text-sm uppercase tracking-wide">Hours</h4>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li class="flex justify-between gap-4"><span>Mon – Sat</span><span>8:00am – 10:00pm</span></li>
+        <li class="flex justify-between gap-4"><span>Sunday</span><span>10:00am – 8:00pm</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-6 px-5 sm:px-8 text-xs text-white/50 flex flex-col sm:flex-row gap-2 justify-between max-w-7xl mx-auto">
+    <p>© <span id="year"></span> BeyondTabs Pharmacy. All rights reserved.</p>
+    <p>Designed with care for feeling better, feeling alive. · <a href="admin-login.html" class="hover:text-brand-pink transition-colors">Staff Login</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/2349031218118?text=Hello%20BeyondTabs%20Pharmacy" target="_blank" rel="noopener"
+   class="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] shadow-soft flex items-center justify-center hover:scale-105 transition-transform"
+   aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-7 w-7 fill-white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.3.37-.44.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2 1.11.98 2.04 1.29 2.33 1.43.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
+</a>
+
+<button id="chat-toggle" aria-label="Open chat with BeyondTabs assistant" class="fixed bottom-6 left-6 z-50 h-14 w-14 rounded-full bg-gradient-to-br from-brand-magenta to-brand-violet shadow-soft flex items-center justify-center hover:scale-105 transition-transform">
+  <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
+</button>
+
+<div id="chat-panel" class="chat-hidden fixed bottom-24 left-6 z-50 w-[92vw] max-w-sm bg-white rounded-3xl shadow-soft ring-1 ring-brand-ink/10 flex flex-col overflow-hidden" style="height:min(70vh,520px)">
+  <div class="bg-gradient-to-r from-brand-magenta to-brand-violet px-5 py-4 flex items-center justify-between shrink-0">
+    <div class="flex items-center gap-3">
+      <img src="assets/images/logo.png" alt="" class="h-9 w-9 rounded-full object-cover ring-2 ring-white/40">
+      <div>
+        <p class="font-display font-700 text-white leading-tight">Ask BeyondTabs</p>
+        <p class="text-[11px] text-white/75">General info · not medical advice</p>
+      </div>
+    </div>
+    <button id="chat-close" aria-label="Close chat" class="h-8 w-8 rounded-full bg-white/15 flex items-center justify-center text-white hover:bg-white/25 transition-colors">
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div id="chat-messages" class="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-white"></div>
+
+  <form id="chat-form" class="border-t border-brand-ink/5 p-3 flex items-center gap-2 shrink-0">
+    <input id="chat-input" type="text" autocomplete="off" placeholder="Ask about hours, delivery, products…"
+           class="flex-1 rounded-full border border-brand-ink/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-magenta focus:border-transparent">
+    <button type="submit" aria-label="Send message" class="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br from-brand-magenta to-brand-violet flex items-center justify-center hover:opacity-90 transition-opacity">
+      <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+    </button>
+  </form>
+  <div class="px-4 pb-3 flex items-center justify-between shrink-0">
+    <button id="chat-clear" type="button" class="text-[11px] font-semibold text-brand-ink/40 hover:text-brand-magenta transition-colors">Clear chat</button>
+    <p class="text-[11px] text-brand-ink/40">Saved on this device</p>
+  </div>
+</div>
+
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
